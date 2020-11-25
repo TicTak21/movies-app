@@ -1,0 +1,94 @@
+{
+  "movies": [
+    {
+      "title": "Ghost Rider",
+      "description": "Nullam porttitor lacus at turpis. Donec posuere metus vitae ipsum.",
+      "views": 3504,
+      "rating": 4.4,
+      "genresIds": [84],
+      "adult": true,
+      "country": "YE"
+    },
+    {
+      "title": "Pool, The (Swimming Pool - Der Tod feiert mit) ",
+      "description": "Nulla ut erat id mauris vulputate elementum. Nullam varius. Nulla facilisi.",
+      "views": 4243,
+      "rating": 4.89,
+      "genresIds": null,
+      "adult": true,
+      "country": "JP"
+    },
+    {
+      "title": "Foul King, The (Banchikwang)",
+      "description": "Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Nulla dapibus dolor vel est. Donec odio justo, sollicitudin ut, suscipit a, feugiat et, eros.",
+      "views": 2480,
+      "rating": 2.78,
+      "genresIds": [32, 12],
+      "adult": false,
+      "country": "SE"
+    },
+    {
+      "title": "Tale from the Past, A (Përralle Nga e Kaluara)",
+      "description": "Ut at dolor quis odio consequat varius. Integer ac leo. Pellentesque ultrices mattis odio.",
+      "views": 3210,
+      "rating": 3.6,
+      "genresIds": [20, 22, 23],
+      "adult": true,
+      "country": "SE"
+    },
+    {
+      "title": "Life of Reilly, The",
+      "description": "Phasellus sit amet erat. Nulla tempus.",
+      "views": 2505,
+      "rating": 2.82,
+      "genresIds": null,
+      "adult": false,
+      "country": "CN"
+    },
+    {
+      "title": "Great King, The (Der große König)",
+      "description": "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Proin interdum mauris non ligula pellentesque ultrices. Phasellus id sapien in sapien iaculis congue.",
+      "views": 1746,
+      "rating": 2.25,
+      "genresIds": [2, 12],
+      "adult": false,
+      "country": "PH"
+    },
+    {
+      "title": "Night Tide",
+      "description": "Vestibulum rutrum rutrum neque. Aenean auctor gravida sem.",
+      "views": 2492,
+      "rating": 1.36,
+      "genresIds": null,
+      "adult": false,
+      "country": "CA"
+    },
+    {
+      "title": "Bitter Sugar (Azúcar amarga)",
+      "description": "Proin eu mi.",
+      "views": 9357,
+      "rating": 3.76,
+      "genresIds": [68],
+      "adult": false,
+      "country": "PT"
+    },
+    {
+      "title": "Ritual (Shiki-Jitsu)",
+      "description": "Sed vel enim sit amet nunc viverra dapibus. Nulla suscipit ligula in lacus. Curabitur at ipsum ac tellus semper interdum.",
+      "views": 7247,
+      "rating": 2.62,
+      "genresIds": [11],
+      "adult": true,
+      "country": "CO"
+    },
+    {
+      "title": "Two-Way Stretch",
+      "description": "Aliquam non mauris.",
+      "views": 5310,
+      "rating": 1.86,
+      "genresIds": [70],
+      "adult": true,
+      "country": "BO"
+    }
+  ]
+}
