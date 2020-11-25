@@ -1,27 +1,43 @@
-# MoviesFrontend
+# Movies Frontend | Movies Web
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 11.0.2.
+## Tech Stack:
+- [Angular](https://angular.io/)
+- [SCSS](https://sass-lang.com/)
 
-## Development server
+## Installation
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+```bash
+yarn install
+```
 
-## Code scaffolding
+## Running the app
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+```bash
+# development
+$ ng serve
+```
+
+## Test
+
+```bash
+# unit tests
+$ ng test
+
+# e2e tests
+$ ng e2e
+```
 
 ## Build
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
+```bash
+# build
+ng build
 
-## Running unit tests
+# prodcution build
+ng build --prod
+```
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+## Stay in touch
 
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+- Website - [Alex Kovalev](https://tictak21.github.io/gh-portfolio)
+- Twitter - [@tictak211](https://twitter.com/tictak211)

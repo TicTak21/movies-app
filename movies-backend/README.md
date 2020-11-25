@@ -1,4 +1,4 @@
-# Movies API | Movies Backend
+# Movies Backend | Movies API
 
 ## Tech Stack:
 - [Nest.js](https://nestjs.com/)
@@ -11,7 +11,6 @@
 ```bash
 yarn install
 ```
-
 
 ## Running the app
 
