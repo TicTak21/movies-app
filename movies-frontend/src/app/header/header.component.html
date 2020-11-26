@@ -1,0 +1,55 @@
+<div>
+  <ly-toolbar position="static" bg="primary" [elevation]="3">
+    <button
+      color="primary:contrast"
+      ly-button
+      appearance="icon"
+      (click)="drawer.toggle()"
+    >
+      <ly-icon>menu</ly-icon>
+    </button>
+    <h6 [lyTyp]="'title'" [withClass]="classes.grow">Movies-App</h6>
+
+    <button ly-button (click)="setTheme()" appearance="icon">
+      <ly-icon>brightness_6</ly-icon>
+    </button>
+  </ly-toolbar>
+
+  <ly-drawer-container [withClass]="classes.drawerContainer">
+    <ly-drawer
+      #drawer="lyDrawer"
+      ly-paper
+      closed
+      position="before"
+      [mode]="mode"
+      [drawerWidth]="250"
+      [hasBackdrop]="hasBackdrop"
+      bg="background:primary"
+    >
+      <div>
+        <ly-paper>
+          <ly-list>
+            <button ly-list-item>
+              <ly-icon ly-list-icon>home</ly-icon>
+              <span ly-line>Home</span>
+            </button>
+            <button ly-list-item>
+              <ly-icon ly-list-icon>view_list</ly-icon>
+              <span ly-line>Catalog</span>
+            </button>
+            <button ly-list-item>
+              <ly-icon ly-list-icon>info</ly-icon>
+              <span ly-line>About</span>
+            </button>
+          </ly-list>
+        </ly-paper>
+      </div>
+    </ly-drawer>
+    <ly-drawer-content [withClass]="classes.drawerContent">
+      Lorem ipsum dolor sit amet consectetur adipisicing elit. Totam praesentium
+      exercitationem tenetur quia at ex, quam odit minima excepturi consequatur
+      repellendus dignissimos veritatis necessitatibus rerum! A magni quae ipsa
+      ducimus.
+    </ly-drawer-content>
+  </ly-drawer-container>
+</div>
