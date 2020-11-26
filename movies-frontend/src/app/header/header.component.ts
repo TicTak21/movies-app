@@ -8,13 +8,6 @@ const styles = {
   grow: {
     flexGrow: 1,
   },
-  drawerContainer: {
-    height: '100vh',
-    transform: 'translate3d(0,0,0)',
-  },
-  drawerContent: {
-    padding: '1em',
-  },
 };
 
 @Component({
@@ -27,9 +20,6 @@ export class HeaderComponent implements OnInit {
   setTheme!: () => void;
 
   classes = this.theme.addStyleSheet(styles);
-
-  mode = 'over';
-  hasBackdrop: boolean | null = true;
 
   constructor(private theme: LyTheme2) {}
 
