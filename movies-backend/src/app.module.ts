@@ -6,9 +6,6 @@ import { ConfigModule } from '@nestjs/config';
 // === controllers ===
 import { AppController } from './app.controller';
 
-// === services ===
-import { AppService } from './app.service';
-
 // === modules
 import { MovieModule } from './movie/movie.module';
 
@@ -27,7 +24,6 @@ import { LoggingInterceptor } from './shared/interceptors/logging.interceptor';
   ],
   controllers: [AppController],
   providers: [
-    AppService,
     { provide: APP_FILTER, useClass: HttpErrorFilter },
     { provide: APP_INTERCEPTOR, useClass: LoggingInterceptor },
   ],
