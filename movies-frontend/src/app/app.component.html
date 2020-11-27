@@ -1,5 +1,14 @@
 <div>
-  <app-header [setTheme]="setTheme"> </app-header>
+  <app-header [setTheme]="setTheme"></app-header>
+
+  <ly-paper *ngFor="let movie of movies$ | async">
+    <ly-list>
+      <ly-list-item>
+        <h4 ly-line>{{ movie.name }}</h4>
+        <p ly-line>{{ movie.username }}</p>
+      </ly-list-item>
+    </ly-list>
+  </ly-paper>
 </div>
 
 <router-outlet></router-outlet>
