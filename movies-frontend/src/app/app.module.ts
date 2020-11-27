@@ -20,7 +20,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MinimaLight, MinimaDark } from '@alyle/ui/themes/minima';
 
 // === Ly ===
-
+import { LySnackBarModule } from '@alyle/ui/snack-bar';
 import { LyBadgeModule } from '@alyle/ui/badge';
 import { LyListModule } from '@alyle/ui/list';
 import { LyAvatarModule } from '@alyle/ui/avatar';
@@ -31,13 +31,21 @@ import { LyRadioModule } from '@alyle/ui/radio';
 import { LyIconModule } from '@alyle/ui/icon';
 import { LyToolbarModule } from '@alyle/ui/toolbar';
 import { LyTypographyModule } from '@alyle/ui/typography';
+import { LyGridModule } from '@alyle/ui/grid';
 
 // === components ===
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './header/header.component';
+import { MoviesListComponent } from './movie/movies-list/movies-list.component';
+import { MovieCardComponent } from './movie/movie-card/movie-card.component';
 
 @NgModule({
-  declarations: [AppComponent, HeaderComponent],
+  declarations: [
+    AppComponent,
+    HeaderComponent,
+    MoviesListComponent,
+    MovieCardComponent,
+  ],
   imports: [
     BrowserModule,
     HttpClientModule,
@@ -56,6 +64,8 @@ import { HeaderComponent } from './header/header.component';
     LyCommonModule,
     LyDrawerModule,
     LyRadioModule,
+    LySnackBarModule,
+    LyGridModule,
   ],
   providers: [
     { provide: HAMMER_GESTURE_CONFIG, useClass: LyHammerGestureConfig },

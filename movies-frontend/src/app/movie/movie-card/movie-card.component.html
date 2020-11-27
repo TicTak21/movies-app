@@ -1,0 +1,22 @@
+<ly-grid container spacing="16" [className]="classes.wrapper">
+  <ly-grid item col="10">
+    <h4 ly-line>{{ movie.name }}</h4>
+    <p ly-line>{{ movie.username }}</p>
+  </ly-grid>
+  <ly-grid item col="2" [className]="classes.ctrlBlock">
+    <button ly-button appearance="icon" color="warn" (click)="openSnack()">
+      <ly-icon>favorite</ly-icon>
+    </button>
+  </ly-grid>
+</ly-grid>
+
+<ng-template
+  ly-snack-bar
+  #sb="lySnackBar"
+  duration="3000"
+  let-val="val"
+  let-msg="msg"
+>
+  <span>{{ msg }}</span>
+  <button ly-button color="accent" (click)="sb.dismiss()">Dismiss</button>
+</ng-template>
