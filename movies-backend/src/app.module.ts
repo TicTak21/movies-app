@@ -1,6 +1,7 @@
 import { MikroOrmModule } from '@mikro-orm/nestjs';
 import { Module } from '@nestjs/common';
 import { APP_FILTER, APP_INTERCEPTOR } from '@nestjs/core';
+import { ConfigModule } from '@nestjs/config';
 
 // === controllers ===
 import { AppController } from './app.controller';
@@ -19,7 +20,11 @@ import { HttpErrorFilter } from './shared/filters/http-error.filter';
 import { LoggingInterceptor } from './shared/interceptors/logging.interceptor';
 
 @Module({
-  imports: [MikroOrmModule.forRoot(config), MovieModule],
+  imports: [
+    ConfigModule.forRoot(),
+    MikroOrmModule.forRoot(config),
+    MovieModule,
+  ],
   controllers: [AppController],
   providers: [
     AppService,
