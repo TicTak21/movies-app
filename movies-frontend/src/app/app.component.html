@@ -1,8 +1,4 @@
-<app-header
-  [setTheme]="setTheme"
-  [toggleDrawer]="toggleDrawer"
-  [toggleMini]="toggleMini"
-></app-header>
+<app-header [setTheme]="setTheme" [toggleDrawer]="toggleDrawer"></app-header>
 
 <ly-drawer-container>
   <ly-drawer
@@ -13,7 +9,7 @@
     [drawerWidth]="width"
   >
     <ly-list>
-      <button ly-list-item (click)="toggleMini()" lyTooltip="Toggle menu">
+      <button ly-list-item (click)="toggleExpanded()" lyTooltip="Toggle menu">
         <ly-icon ly-list-icon disablePadding>menu</ly-icon>
         <span ly-line>Minimize menu</span>
       </button>

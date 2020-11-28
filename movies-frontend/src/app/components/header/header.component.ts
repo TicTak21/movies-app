@@ -22,17 +22,9 @@ export class HeaderComponent implements OnInit {
   @Input()
   toggleDrawer!: () => void;
 
-  @Input()
-  toggleMini!: (mini?: boolean) => void;
-
   classes = this.theme.addStyleSheet(styles);
 
   constructor(private readonly theme: LyTheme2) {}
-
-  toggleSidebar() {
-    this.toggleDrawer();
-    this.toggleMini(false);
-  }
 
   ngOnInit(): void {}
 }

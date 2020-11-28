@@ -27,8 +27,8 @@ const STYLES = (theme: ThemeVariables, ref: ThemeRef) => {
   };
 };
 
-const DEFAULT = '250px over@XSmall';
-const MINI = '56px over@XSmall';
+const EXPANDED = '250px over@XSmall';
+const DEFAULT = '56px over@XSmall';
 
 @Component({
   selector: 'app-root',
@@ -42,16 +42,16 @@ export class AppComponent implements OnInit {
 
   readonly classes = this.sRenderer.renderSheet(STYLES, true);
 
-  mini = false;
+  expanded = false;
 
   get width() {
-    return this.mini ? MINI : DEFAULT;
+    return this.expanded ? EXPANDED : DEFAULT;
   }
 
   constructor(readonly sRenderer: StyleRenderer, private theme: LyTheme2) {}
 
-  toggleMini(mini?: boolean) {
-    this.mini = mini || !this.mini;
+  toggleExpanded() {
+    this.expanded = !this.expanded;
   }
 
   toggleDrawer = () => {
