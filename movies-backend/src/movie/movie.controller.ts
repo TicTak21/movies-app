@@ -21,7 +21,7 @@ import { IMovie } from './movie.interface';
 // === services ===
 import { MovieService } from './movie.service';
 
-@ApiTags('movies')
+@ApiTags('Movies')
 @Controller('movies')
 export class MovieController {
   constructor(private readonly movieService: MovieService) {}
