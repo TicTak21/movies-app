@@ -10,7 +10,3 @@ export interface IMovie extends IBase {
   country?: string;
   releasedAt: string;
 }
-
-export interface IMovieRO {
-  movie: IMovie;
-}
