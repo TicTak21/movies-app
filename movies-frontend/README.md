@@ -2,6 +2,7 @@
 
 ## Tech Stack:
 - [Angular](https://angular.io/)
+- [Alyle-UI](https://alyle.io/) ❤️
 - [SCSS](https://sass-lang.com/)
 
 ## Installation
