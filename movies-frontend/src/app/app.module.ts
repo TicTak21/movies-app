@@ -32,12 +32,15 @@ import { LyIconModule } from '@alyle/ui/icon';
 import { LyToolbarModule } from '@alyle/ui/toolbar';
 import { LyTypographyModule } from '@alyle/ui/typography';
 import { LyGridModule } from '@alyle/ui/grid';
+import { LyDividerModule } from '@alyle/ui/divider';
 
 // === components ===
 import { AppComponent } from './app.component';
-import { HeaderComponent } from './header/header.component';
-import { MoviesListComponent } from './movie/movies-list/movies-list.component';
-import { MovieCardComponent } from './movie/movie-card/movie-card.component';
+import { HeaderComponent } from './components/header/header.component';
+import { MoviesListComponent } from './components/movie/movies-list/movies-list.component';
+import { MovieCardComponent } from './components/movie/movie-card/movie-card.component';
+import { PageNotFoundComponent } from './pages/page-not-found/page-not-found.component';
+import { HomeComponent } from './pages/home/home.component';
 
 @NgModule({
   declarations: [
@@ -45,6 +48,8 @@ import { MovieCardComponent } from './movie/movie-card/movie-card.component';
     HeaderComponent,
     MoviesListComponent,
     MovieCardComponent,
+    PageNotFoundComponent,
+    HomeComponent,
   ],
   imports: [
     BrowserModule,
@@ -66,6 +71,7 @@ import { MovieCardComponent } from './movie/movie-card/movie-card.component';
     LyRadioModule,
     LySnackBarModule,
     LyGridModule,
+    LyDividerModule,
   ],
   providers: [
     { provide: HAMMER_GESTURE_CONFIG, useClass: LyHammerGestureConfig },

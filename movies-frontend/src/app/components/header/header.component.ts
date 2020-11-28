@@ -2,8 +2,10 @@ import { Component, Input, OnInit } from '@angular/core';
 import { LyTheme2 } from '@alyle/ui';
 
 const styles = {
-  grow: {
+  nav: {
     flexGrow: 1,
+    display: 'flex',
+    gap: '1em',
   },
 };
 
@@ -18,7 +20,7 @@ export class HeaderComponent implements OnInit {
 
   classes = this.theme.addStyleSheet(styles);
 
-  constructor(private theme: LyTheme2) {}
+  constructor(private readonly theme: LyTheme2) {}
 
   ngOnInit(): void {}
 }
