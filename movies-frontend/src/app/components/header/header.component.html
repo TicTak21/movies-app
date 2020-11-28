@@ -1,6 +1,10 @@
 <ly-toolbar position="static" bg="primary" [elevation]="5">
-  <nav [lyTyp]="'title'" [withClass]="classes.nav" noWrap>
-    <a routerLink="">Movies-App</a>
+  <nav [withClass]="classes.title">
+    <button ly-button appearance="icon" bg="primary" (click)="toggleSidebar()">
+      <ly-icon>menu</ly-icon>
+    </button>
+
+    <h6 lyTyp="title">Movies-App</h6>
   </nav>
 
   <button ly-button (click)="setTheme()" appearance="icon">

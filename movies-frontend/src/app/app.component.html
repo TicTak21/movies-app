@@ -1,5 +1,51 @@
-<app-header [setTheme]="setTheme"></app-header>
+<app-header
+  [setTheme]="setTheme"
+  [toggleDrawer]="toggleDrawer"
+  [toggleMini]="toggleMini"
+></app-header>
 
-<div [lyP]="2">
-  <router-outlet></router-outlet>
-</div>
+<ly-drawer-container>
+  <ly-drawer
+    #drawer="lyDrawer"
+    ly-paper
+    opened
+    position="before"
+    [drawerWidth]="width"
+  >
+    <ly-list>
+      <button ly-list-item (click)="toggleMini()" lyTooltip="Toggle menu">
+        <ly-icon ly-list-icon disablePadding>menu</ly-icon>
+        <span ly-line>Minimize menu</span>
+      </button>
+
+      <ly-divider></ly-divider>
+
+      <a ly-list-item routerLink="/home">
+        <ly-icon ly-list-icon disablePadding>home</ly-icon>
+        <span ly-line>Home</span>
+      </a>
+
+      <a ly-list-item routerLink="/movies">
+        <ly-icon ly-list-icon disablePadding>movies</ly-icon>
+        <span ly-line>Movies</span>
+      </a>
+      <a ly-list-item routerLink="/about">
+        <ly-icon ly-list-icon disablePadding>info</ly-icon>
+        <span ly-line>About</span>
+      </a>
+
+      <ly-divider></ly-divider>
+
+      <button ly-list-item (click)="toggleDrawer()" lyTooltip="Close menu">
+        <ly-icon ly-list-icon disablePadding>close</ly-icon>
+        <span ly-line>Close menu</span>
+      </button>
+    </ly-list>
+  </ly-drawer>
+
+  <ly-drawer-content>
+    <div [lyP]="2">
+      <router-outlet></router-outlet>
+    </div>
+  </ly-drawer-content>
+</ly-drawer-container>

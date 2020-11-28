@@ -33,6 +33,7 @@ import { LyToolbarModule } from '@alyle/ui/toolbar';
 import { LyTypographyModule } from '@alyle/ui/typography';
 import { LyGridModule } from '@alyle/ui/grid';
 import { LyDividerModule } from '@alyle/ui/divider';
+import { LyTooltipModule } from '@alyle/ui/tooltip';
 
 // === components ===
 import { AppComponent } from './app.component';
@@ -41,6 +42,7 @@ import { MoviesListComponent } from './components/movie/movies-list/movies-list.
 import { MovieCardComponent } from './components/movie/movie-card/movie-card.component';
 import { PageNotFoundComponent } from './pages/page-not-found/page-not-found.component';
 import { HomeComponent } from './pages/home/home.component';
+import { AboutComponent } from './pages/about/about.component';
 
 @NgModule({
   declarations: [
@@ -50,6 +52,7 @@ import { HomeComponent } from './pages/home/home.component';
     MovieCardComponent,
     PageNotFoundComponent,
     HomeComponent,
+    AboutComponent,
   ],
   imports: [
     BrowserModule,
@@ -72,6 +75,7 @@ import { HomeComponent } from './pages/home/home.component';
     LySnackBarModule,
     LyGridModule,
     LyDividerModule,
+    LyTooltipModule,
   ],
   providers: [
     { provide: HAMMER_GESTURE_CONFIG, useClass: LyHammerGestureConfig },

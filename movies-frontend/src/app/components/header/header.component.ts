@@ -2,10 +2,11 @@ import { Component, Input, OnInit } from '@angular/core';
 import { LyTheme2 } from '@alyle/ui';
 
 const styles = {
-  nav: {
+  title: {
     flexGrow: 1,
     display: 'flex',
     gap: '1em',
+    alignItems: 'center',
   },
 };
 
@@ -18,9 +19,20 @@ export class HeaderComponent implements OnInit {
   @Input()
   setTheme!: () => void;
 
+  @Input()
+  toggleDrawer!: () => void;
+
+  @Input()
+  toggleMini!: (mini?: boolean) => void;
+
   classes = this.theme.addStyleSheet(styles);
 
   constructor(private readonly theme: LyTheme2) {}
+
+  toggleSidebar() {
+    this.toggleDrawer();
+    this.toggleMini(false);
+  }
 
   ngOnInit(): void {}
 }

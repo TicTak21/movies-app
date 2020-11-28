@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
 import {
   ThemeVariables,
   ThemeRef,
@@ -6,6 +6,7 @@ import {
   StyleRenderer,
   LyTheme2,
 } from '@alyle/ui';
+import { LyDrawer } from '@alyle/ui/drawer';
 
 const STYLES = (theme: ThemeVariables, ref: ThemeRef) => {
   // eslint-disable-next-line no-underscore-dangle
@@ -26,6 +27,9 @@ const STYLES = (theme: ThemeVariables, ref: ThemeRef) => {
   };
 };
 
+const DEFAULT = '250px over@XSmall';
+const MINI = '56px over@XSmall';
+
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
@@ -33,9 +37,26 @@ const STYLES = (theme: ThemeVariables, ref: ThemeRef) => {
   providers: [StyleRenderer],
 })
 export class AppComponent implements OnInit {
+  @ViewChild('drawer')
+  drawer!: LyDrawer;
+
   readonly classes = this.sRenderer.renderSheet(STYLES, true);
 
+  mini = false;
+
+  get width() {
+    return this.mini ? MINI : DEFAULT;
+  }
+
   constructor(readonly sRenderer: StyleRenderer, private theme: LyTheme2) {}
+
+  toggleMini(mini?: boolean) {
+    this.mini = mini || !this.mini;
+  }
+
+  toggleDrawer = () => {
+    this.drawer.toggle();
+  };
 
   setTheme() {
     if (this.theme.variables.name === 'minima-light') {
