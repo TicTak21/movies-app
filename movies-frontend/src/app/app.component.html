@@ -9,9 +9,9 @@
     [drawerWidth]="width"
   >
     <ly-list>
-      <button ly-list-item (click)="toggleExpanded()" lyTooltip="Toggle menu">
+      <button ly-list-item (click)="toggleExpanded()">
         <ly-icon ly-list-icon disablePadding>menu</ly-icon>
-        <span ly-line>Minimize menu</span>
+        <span ly-line>Toggle menu</span>
       </button>
 
       <ly-divider></ly-divider>
@@ -32,7 +32,7 @@
 
       <ly-divider></ly-divider>
 
-      <button ly-list-item (click)="toggleDrawer()" lyTooltip="Close menu">
+      <button ly-list-item (click)="toggleDrawer()">
         <ly-icon ly-list-icon disablePadding>close</ly-icon>
         <span ly-line>Close menu</span>
       </button>
