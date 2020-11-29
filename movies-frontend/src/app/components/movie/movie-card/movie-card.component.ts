@@ -1,6 +1,7 @@
 import { Component, Input, OnInit, ViewChild } from '@angular/core';
 import { LySnackBar } from '@alyle/ui/snack-bar';
 import { ThemeVariables, shadowBuilder, LyTheme2 } from '@alyle/ui';
+import { IMovie } from '../../../../../../shared/interfaces/movie.interface';
 
 const styles = (theme: ThemeVariables) => ({
   wrapper: {
@@ -23,7 +24,7 @@ const styles = (theme: ThemeVariables) => ({
   styleUrls: ['./movie-card.component.scss'],
 })
 export class MovieCardComponent implements OnInit {
-  @Input() public movie: any;
+  @Input() public movie!: IMovie;
   @ViewChild('sb')
   public sb!: LySnackBar;
 
@@ -39,9 +40,9 @@ export class MovieCardComponent implements OnInit {
   public handleLike() {
     let msg = ``;
     if (this.isLiked) {
-      msg += `Unliked: ${this.movie.name}`;
+      msg += `Unliked`;
     } else {
-      msg += `Liked: ${this.movie.name}`;
+      msg += `Liked`;
     }
 
     this.openSnack(msg);
@@ -51,9 +52,9 @@ export class MovieCardComponent implements OnInit {
   public handleWatchLater() {
     let msg = ``;
     if (this.isInWatchLater) {
-      msg += `Removed from Watch later: ${this.movie.name}`;
+      msg += `Removed from Watch later`;
     } else {
-      msg += `Added to Watch later: ${this.movie.name}`;
+      msg += `Added to Watch later`;
     }
     this.openSnack(msg);
     this.isInWatchLater = !this.isInWatchLater;

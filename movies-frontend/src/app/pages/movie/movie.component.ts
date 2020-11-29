@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Observable } from 'rxjs';
 import { MovieService } from 'src/app/shared/services/movie/movie.service';
+import { IMovie } from '../../../../../shared/interfaces/movie.interface';
 
 @Component({
   selector: 'app-movie',
@@ -8,7 +9,7 @@ import { MovieService } from 'src/app/shared/services/movie/movie.service';
   styleUrls: ['./movie.component.scss'],
 })
 export class MovieComponent implements OnInit {
-  public movies$: Observable<[]> = new Observable<[]>();
+  public movies$: Observable<IMovie[]> = new Observable<IMovie[]>();
 
   constructor(private readonly movieService: MovieService) {}
 

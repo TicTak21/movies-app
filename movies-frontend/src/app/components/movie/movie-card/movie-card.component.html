@@ -1,7 +1,7 @@
 <ly-grid container spacing="16" [className]="classes.wrapper">
   <ly-grid item col="10">
-    <h4 ly-line>{{ movie.name }}</h4>
-    <p ly-line>{{ movie.username }}</p>
+    <h4 ly-line>{{ movie.title }}</h4>
+    <p ly-line>{{ movie.description }}</p>
   </ly-grid>
   <ly-grid item col="2" [className]="classes.ctrlBlock">
     <button ly-button appearance="icon" color="warn" (click)="handleLike()">
