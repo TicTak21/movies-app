@@ -9,8 +9,8 @@ import {
 import { LyDrawer } from '@alyle/ui/drawer';
 
 const STYLES = (theme: ThemeVariables, ref: ThemeRef) => {
-  // eslint-disable-next-line no-underscore-dangle
   const __ = ref.selectorsOf(STYLES);
+
   return {
     $global: lyl`{
       body {

@@ -17,14 +17,17 @@ const styles = {
 })
 export class HeaderComponent implements OnInit {
   @Input()
-  setTheme!: () => void;
+  public setTheme: () => void;
 
   @Input()
-  toggleDrawer!: () => void;
+  public toggleDrawer: () => void;
 
-  classes = this.theme.addStyleSheet(styles);
+  public readonly classes = this.theme.addStyleSheet(styles);
 
-  constructor(private readonly theme: LyTheme2) {}
+  constructor(private readonly theme: LyTheme2) {
+    this.setTheme = (): void => {};
+    this.toggleDrawer = (): void => {};
+  }
 
   ngOnInit(): void {}
 }

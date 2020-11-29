@@ -23,19 +23,19 @@ const styles = (theme: ThemeVariables) => ({
   styleUrls: ['./movie-card.component.scss'],
 })
 export class MovieCardComponent implements OnInit {
-  @Input() movie: any;
+  @Input() public movie: any;
   @ViewChild('sb')
-  sb!: LySnackBar;
+  public sb!: LySnackBar;
 
-  readonly classes = this.theme.addStyleSheet(styles);
+  public readonly classes = this.theme.addStyleSheet(styles);
 
   constructor(private theme: LyTheme2) {}
 
-  openSnack() {
+  ngOnInit(): void {}
+
+  public openSnack(): void {
     this.sb.open({
       msg: `Like action: ${this.movie.name}`,
     });
   }
-
-  ngOnInit(): void {}
 }

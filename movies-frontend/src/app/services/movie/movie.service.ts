@@ -5,12 +5,12 @@ import { Observable } from 'rxjs';
 @Injectable({
   providedIn: 'root',
 })
-export class MoviesService {
-  readonly url = 'https://jsonplaceholder.typicode.com/users';
+export class MovieService {
+  private readonly url = 'https://jsonplaceholder.typicode.com/users';
 
   constructor(private readonly httpClient: HttpClient) {}
 
-  getMovies(): Observable<any> {
+  public getMovies(): Observable<any> {
     return this.httpClient.get<any>(this.url);
   }
 }

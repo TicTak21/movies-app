@@ -38,21 +38,21 @@ import { LyTooltipModule } from '@alyle/ui/tooltip';
 // === components ===
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './components/header/header.component';
-import { MoviesListComponent } from './components/movie/movies-list/movies-list.component';
 import { MovieCardComponent } from './components/movie/movie-card/movie-card.component';
 import { PageNotFoundComponent } from './pages/page-not-found/page-not-found.component';
 import { HomeComponent } from './pages/home/home.component';
 import { AboutComponent } from './pages/about/about.component';
+import { MovieListComponent } from './components/movie/movie-list/movie-list.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     HeaderComponent,
-    MoviesListComponent,
     MovieCardComponent,
     PageNotFoundComponent,
     HomeComponent,
     AboutComponent,
+    MovieListComponent,
   ],
   imports: [
     BrowserModule,
