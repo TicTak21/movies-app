@@ -1,5 +1,6 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { LyTheme2 } from '@alyle/ui';
+import { TVoidFunc } from 'src/types/event.types';
 
 const styles = {
   title: {
@@ -16,18 +17,15 @@ const styles = {
   styleUrls: ['./header.component.scss'],
 })
 export class HeaderComponent implements OnInit {
-  @Input()
-  public setTheme: () => void;
-
-  @Input()
-  public toggleDrawer: () => void;
-
   public readonly classes = this.theme.addStyleSheet(styles);
 
-  constructor(private readonly theme: LyTheme2) {
-    this.setTheme = (): void => {};
-    this.toggleDrawer = (): void => {};
-  }
+  constructor(private readonly theme: LyTheme2) {}
+
+  @Input()
+  public toggleDrawer: TVoidFunc = () => {};
+
+  @Input()
+  public setTheme: TVoidFunc = () => {};
 
   ngOnInit(): void {}
 }
