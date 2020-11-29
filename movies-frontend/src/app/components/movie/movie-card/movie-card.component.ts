@@ -29,7 +29,7 @@ export class MovieCardComponent implements OnInit {
 
   public readonly classes = this.theme.addStyleSheet(styles);
 
-  constructor(private theme: LyTheme2) {}
+  constructor(private readonly theme: LyTheme2) {}
 
   ngOnInit(): void {}
 

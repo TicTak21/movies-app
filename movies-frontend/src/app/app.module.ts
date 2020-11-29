@@ -43,6 +43,7 @@ import { PageNotFoundComponent } from './pages/page-not-found/page-not-found.com
 import { HomeComponent } from './pages/home/home.component';
 import { AboutComponent } from './pages/about/about.component';
 import { MovieListComponent } from './components/movie/movie-list/movie-list.component';
+import { MovieComponent } from './pages/movie/movie.component';
 
 @NgModule({
   declarations: [
@@ -53,6 +54,7 @@ import { MovieListComponent } from './components/movie/movie-list/movie-list.com
     HomeComponent,
     AboutComponent,
     MovieListComponent,
+    MovieComponent,
   ],
   imports: [
     BrowserModule,

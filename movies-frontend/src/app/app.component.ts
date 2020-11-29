@@ -38,11 +38,12 @@ const DEFAULT = '56px over@XSmall';
 })
 export class AppComponent implements OnInit {
   @ViewChild('drawer')
-  drawer!: LyDrawer;
+  public drawer!: LyDrawer;
 
-  readonly classes = this.sRenderer.renderSheet(STYLES, true);
+  public readonly _classes = this.sRenderer.renderSheet(STYLES, true);
 
-  expanded = false;
+  public expanded = false;
+  public readonly hasBackdrop: boolean | null = false;
 
   get width() {
     return this.expanded ? EXPANDED : DEFAULT;
