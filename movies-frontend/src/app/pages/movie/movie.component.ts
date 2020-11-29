@@ -18,6 +18,6 @@ export class MovieComponent implements OnInit {
   }
 
   private fetchMovies(): void {
-    this.movies$ = this.movieService.getMovies();
+    this.movies$ = this.movieService.getAllMovies();
   }
 }
