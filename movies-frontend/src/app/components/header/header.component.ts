@@ -1,6 +1,6 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { LyTheme2 } from '@alyle/ui';
-import { TVoidFunc } from 'src/types/event.types';
+import { TVoidFunc } from 'src/app/shared/types/event.types';
 
 const styles = {
   title: {
