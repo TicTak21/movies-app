@@ -27,15 +27,41 @@ export class MovieCardComponent implements OnInit {
   @ViewChild('sb')
   public sb!: LySnackBar;
 
+  public isLiked = false;
+  public isInWatchLater = false;
+
   public readonly classes = this.theme.addStyleSheet(styles);
 
   constructor(private readonly theme: LyTheme2) {}
 
   ngOnInit(): void {}
 
-  public openSnack(): void {
+  public handleLike() {
+    let msg = ``;
+    if (this.isLiked) {
+      msg += `Unliked: ${this.movie.name}`;
+    } else {
+      msg += `Liked: ${this.movie.name}`;
+    }
+
+    this.openSnack(msg);
+    this.isLiked = !this.isLiked;
+  }
+
+  public handleWatchLater() {
+    let msg = ``;
+    if (this.isInWatchLater) {
+      msg += `Removed from Watch later: ${this.movie.name}`;
+    } else {
+      msg += `Added to Watch later: ${this.movie.name}`;
+    }
+    this.openSnack(msg);
+    this.isInWatchLater = !this.isInWatchLater;
+  }
+
+  private openSnack(msg: string): void {
     this.sb.open({
-      msg: `Like action: ${this.movie.name}`,
+      msg,
     });
   }
 }

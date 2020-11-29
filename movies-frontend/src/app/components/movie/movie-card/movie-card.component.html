@@ -4,8 +4,18 @@
     <p ly-line>{{ movie.username }}</p>
   </ly-grid>
   <ly-grid item col="2" [className]="classes.ctrlBlock">
-    <button ly-button appearance="icon" color="warn" (click)="openSnack()">
-      <ly-icon>favorite</ly-icon>
+    <button ly-button appearance="icon" color="warn" (click)="handleLike()">
+      <ly-icon *ngIf="!isLiked">favorite_outlined</ly-icon>
+      <ly-icon *ngIf="isLiked">favorite_filled</ly-icon>
+    </button>
+    <button
+      ly-button
+      appearance="icon"
+      color="secondary"
+      (click)="handleWatchLater()"
+    >
+      <ly-icon *ngIf="!isInWatchLater">watch_later</ly-icon>
+      <ly-icon *ngIf="isInWatchLater">done_all</ly-icon>
     </button>
   </ly-grid>
 </ly-grid>
