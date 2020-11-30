@@ -34,6 +34,7 @@ import { LyTypographyModule } from '@alyle/ui/typography';
 import { LyGridModule } from '@alyle/ui/grid';
 import { LyDividerModule } from '@alyle/ui/divider';
 import { LyTooltipModule } from '@alyle/ui/tooltip';
+import { LyFieldModule } from '@alyle/ui/field';
 
 // === components ===
 import { AppComponent } from './app.component';
@@ -76,6 +77,7 @@ import { SortByPipe } from './shared/pipes/sort-by/sort-by.pipe';
     LyCommonModule,
     LyDrawerModule,
     LyRadioModule,
+    LyFieldModule,
     LySnackBarModule,
     LyGridModule,
     LyDividerModule,

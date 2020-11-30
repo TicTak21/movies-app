@@ -10,6 +10,12 @@ const routes: Routes = [
   { path: '', redirectTo: 'home', pathMatch: 'full' },
   { path: 'movies', component: MovieComponent },
   { path: 'about', component: AboutComponent },
+  {
+    path: 'auth',
+    loadChildren: () =>
+      import('./pages/auth/auth.module').then(m => m.AuthModule),
+  },
+
   { path: '**', component: PageNotFoundComponent },
 ];
 

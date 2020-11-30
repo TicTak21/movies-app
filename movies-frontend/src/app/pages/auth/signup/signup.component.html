@@ -1,0 +1,45 @@
+<div [className]="classes.wrapper">
+  <h1 lyTyp="display1" gutterBottom>Sign Up</h1>
+
+  <form
+    [formGroup]="profileForm"
+    (ngSubmit)="onSubmit()"
+    [className]="classes.container"
+    #profileNgForm="ngForm"
+  >
+    <ly-field appearance="filled" [lyWidth]="1">
+      <ly-label>Username</ly-label>
+      <input lyNativeControl type="text" formControlName="username" />
+    </ly-field>
+
+    <ly-field appearance="filled" [lyWidth]="1">
+      <ly-label>Phone number</ly-label>
+      <input lyNativeControl type="text" formControlName="phone" />
+    </ly-field>
+
+    <ly-field appearance="filled" [lyWidth]="1">
+      <ly-label>Email address</ly-label>
+      <input lyNativeControl type="text" formControlName="email" />
+      <ly-error>Required</ly-error>
+    </ly-field>
+
+    <ly-field appearance="filled" [lyWidth]="1">
+      <ly-label>Password</ly-label>
+      <input lyNativeControl type="password" formControlName="password" />
+      <ly-error>Required</ly-error>
+    </ly-field>
+
+    <div [className]="classes.ctrl">
+      <button
+        ly-button
+        (click)="profileNgForm.reset()"
+        bg="accent"
+        raised
+        type="button"
+      >
+        Reset
+      </button>
+      <button ly-button bg="primary" raised type="submit">Sign Up</button>
+    </div>
+  </form>
+</div>
