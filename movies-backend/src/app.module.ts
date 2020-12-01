@@ -15,12 +15,14 @@ import config from './mikro-orm.config';
 // === shared ===
 import { HttpErrorFilter } from './shared/filters/http-error.filter';
 import { LoggingInterceptor } from './shared/interceptors/logging.interceptor';
+import { AuthModule } from './auth/auth.module';
 
 @Module({
   imports: [
     ConfigModule.forRoot(),
     MikroOrmModule.forRoot(config),
     MovieModule,
+    AuthModule,
   ],
   controllers: [AppController],
   providers: [
