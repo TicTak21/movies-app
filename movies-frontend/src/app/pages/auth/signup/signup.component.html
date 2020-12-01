@@ -1,10 +1,10 @@
-<div [className]="classes.wrapper">
+<div class="form-wrapper">
   <h1 lyTyp="display1" gutterBottom>Sign Up</h1>
 
   <form
     [formGroup]="profileForm"
     (ngSubmit)="onSubmit()"
-    [className]="classes.container"
+    class="form-container"
     #profileNgForm="ngForm"
   >
     <ly-field appearance="filled" [lyWidth]="1">
@@ -14,7 +14,9 @@
 
     <ly-field appearance="filled" [lyWidth]="1">
       <ly-label>Phone number</ly-label>
-      <input lyNativeControl type="text" formControlName="phone" />
+      <input lyNativeControl type="tel" formControlName="phone" />
+      <ly-hint>For example: +12345678911</ly-hint>
+      <ly-error>wrong phone format</ly-error>
     </ly-field>
 
     <ly-field appearance="filled" [lyWidth]="1">
@@ -29,7 +31,7 @@
       <ly-error>Required</ly-error>
     </ly-field>
 
-    <div [className]="classes.ctrl">
+    <div class="form__ctrl">
       <button
         ly-button
         (click)="profileNgForm.reset()"

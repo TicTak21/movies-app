@@ -1,16 +1,15 @@
-<div [className]="classes.wrapper">
+<div class="form-wrapper">
   <h1 lyTyp="display1" gutterBottom>Sign In</h1>
 
   <form
     [formGroup]="profileForm"
     (ngSubmit)="onSubmit()"
-    [className]="classes.container"
+    class="form-container"
     #profileNgForm="ngForm"
   >
     <ly-field appearance="filled" [lyWidth]="1">
       <ly-label>Email address</ly-label>
       <input lyNativeControl type="text" formControlName="email" />
-      <ly-hint>Hint</ly-hint>
       <ly-error>Required</ly-error>
     </ly-field>
 
@@ -20,7 +19,7 @@
       <ly-error>Required</ly-error>
     </ly-field>
 
-    <div [className]="classes.ctrl">
+    <div class="form__ctrl">
       <button
         ly-button
         (click)="profileNgForm.reset()"
