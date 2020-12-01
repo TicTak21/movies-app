@@ -52,8 +52,8 @@
   </ly-drawer>
 
   <ly-drawer-content>
-    <div [lyP]="2">
-      <router-outlet></router-outlet>
+    <div [lyP]="2" [@routeAnimations]="prepareRoute(outlet)">
+      <router-outlet #outlet="outlet"></router-outlet>
     </div>
   </ly-drawer-content>
 </ly-drawer-container>

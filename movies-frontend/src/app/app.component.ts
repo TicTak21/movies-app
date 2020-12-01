@@ -7,6 +7,8 @@ import {
   LyTheme2,
 } from '@alyle/ui';
 import { LyDrawer } from '@alyle/ui/drawer';
+import { RouterOutlet } from '@angular/router';
+import { slideInAnimation } from './animations';
 
 const STYLES = (theme: ThemeVariables, ref: ThemeRef) => {
   const __ = ref.selectorsOf(STYLES);
@@ -35,6 +37,7 @@ const DEFAULT = '56px over@XSmall';
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss'],
   providers: [StyleRenderer],
+  animations: [slideInAnimation],
 })
 export class AppComponent implements OnInit {
   @ViewChild('drawer')
@@ -51,15 +54,23 @@ export class AppComponent implements OnInit {
 
   constructor(readonly sRenderer: StyleRenderer, private theme: LyTheme2) {}
 
-  toggleExpanded() {
+  ngOnInit(): void {}
+
+  public prepareRoute(outlet: RouterOutlet) {
+    return (
+      outlet && outlet.activatedRouteData && outlet.activatedRouteData.animation
+    );
+  }
+
+  public toggleExpanded(): void {
     this.expanded = !this.expanded;
   }
 
-  toggleDrawer = () => {
+  public toggleDrawer = (): void => {
     this.drawer.toggle();
   };
 
-  setTheme() {
+  public setTheme(): void {
     if (this.theme.variables.name === 'minima-light') {
       this.theme.setTheme('minima-dark');
       return;
@@ -67,6 +78,4 @@ export class AppComponent implements OnInit {
 
     this.theme.setTheme('minima-light');
   }
-
-  ngOnInit(): void {}
 }

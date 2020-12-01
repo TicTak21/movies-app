@@ -6,10 +6,14 @@ import { AboutComponent } from './pages/about/about.component';
 import { MovieComponent } from './pages/movie/movie.component';
 
 const routes: Routes = [
-  { path: 'home', component: HomeComponent },
+  { path: 'home', component: HomeComponent, data: { animation: 'HomePage' } },
   { path: '', redirectTo: 'home', pathMatch: 'full' },
   { path: 'movies', component: MovieComponent },
-  { path: 'about', component: AboutComponent },
+  {
+    path: 'about',
+    component: AboutComponent,
+    data: { animation: 'AboutPage' },
+  },
   {
     path: 'auth',
     loadChildren: () =>

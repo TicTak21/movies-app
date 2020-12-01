@@ -46,6 +46,7 @@ import { AboutComponent } from './pages/about/about.component';
 import { MovieListComponent } from './components/movie/movie-list/movie-list.component';
 import { MovieComponent } from './pages/movie/movie.component';
 import { SortByPipe } from './shared/pipes/sort-by/sort-by.pipe';
+import { RouterModule } from '@angular/router';
 
 @NgModule({
   declarations: [
