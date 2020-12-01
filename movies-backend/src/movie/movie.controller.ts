@@ -16,7 +16,7 @@ import { ApiBody, ApiOkResponse, ApiTags } from '@nestjs/swagger';
 import { MovieEntity } from './movie.entity';
 
 // === interfaces ===
-import { IMovie } from '../../../shared/interfaces/movie.interface';
+import { IMovie } from './movie.interface';
 
 // === services ===
 import { MovieService } from './movie.service';

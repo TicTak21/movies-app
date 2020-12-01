@@ -9,7 +9,7 @@ import { BaseEntity } from '../shared/entities/base.entity';
 import { getTimestamp } from '../shared/utils/Date.util';
 
 // === interfaces ===
-import { IMovie } from '../../../shared/interfaces/movie.interface';
+import { IMovie } from './movie.interface';
 
 @Entity()
 export class MovieEntity extends BaseEntity implements IMovie {

@@ -1,7 +1,7 @@
 import { Component, Input, OnInit, ViewChild } from '@angular/core';
 import { LySnackBar } from '@alyle/ui/snack-bar';
 import { ThemeVariables, shadowBuilder, LyTheme2 } from '@alyle/ui';
-import { IMovie } from '../../../../../../shared/interfaces/movie.interface';
+import { IMovie } from 'src/app/shared/interfaces/movie.interface';
 
 const styles = (theme: ThemeVariables) => ({
   wrapper: {

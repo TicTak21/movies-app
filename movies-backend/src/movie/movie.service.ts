@@ -8,7 +8,7 @@ import { InjectRepository } from '@mikro-orm/nestjs';
 import { MovieEntity } from './movie.entity';
 
 // === interfaces ===
-import { IMovie } from '../../../shared/interfaces/movie.interface';
+import { IMovie } from './movie.interface';
 
 @Injectable()
 export class MovieService {
