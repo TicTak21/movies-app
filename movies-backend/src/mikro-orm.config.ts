@@ -5,7 +5,7 @@ import { Options } from '@mikro-orm/core';
 // === entities ===
 import { MovieEntity } from './movie/movie.entity';
 import { BaseEntity } from './shared/entities/base.entity';
-import { UserEntity } from './shared/entities/user.entity';
+import { UserEntity } from './user/user.entity';
 
 const logger = new Logger('MikroORM');
 

@@ -2,10 +2,10 @@
 import { Entity, Property } from '@mikro-orm/core';
 
 // === entities ===
-import { BaseEntity } from './base.entity';
+import { BaseEntity } from '../shared/entities/base.entity';
 
 // === interfaces ===
-import { IUser } from '../interfaces/user.interface';
+import { IUser } from './user.interface';
 
 @Entity()
 export class UserEntity extends BaseEntity implements IUser {

@@ -16,6 +16,7 @@ import config from './mikro-orm.config';
 import { HttpErrorFilter } from './shared/filters/http-error.filter';
 import { LoggingInterceptor } from './shared/interceptors/logging.interceptor';
 import { AuthModule } from './auth/auth.module';
+import { UserModule } from './user/user.module';
 
 @Module({
   imports: [
@@ -23,6 +24,7 @@ import { AuthModule } from './auth/auth.module';
     MikroOrmModule.forRoot(config),
     MovieModule,
     AuthModule,
+    UserModule,
   ],
   controllers: [AppController],
   providers: [
