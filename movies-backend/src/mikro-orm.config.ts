@@ -5,7 +5,6 @@ import { Options } from '@mikro-orm/core';
 // === entities ===
 import { MovieEntity } from './movie/movie.entity';
 import { BaseEntity } from './shared/entities/base.entity';
-import { UserEntity } from './user/user.entity';
 
 const logger = new Logger('MikroORM');
 
@@ -14,7 +13,7 @@ const config: Options = {
     path: './src/database/migrations',
     pattern: /^[\w-]+\d+\.[tj]s$/,
   },
-  entities: [BaseEntity, MovieEntity, UserEntity],
+  entities: [BaseEntity, MovieEntity],
   entitiesTs: ['src/**/*.entity.ts'],
   dbName: 'movies-backend',
   type: 'postgresql',
