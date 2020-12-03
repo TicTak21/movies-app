@@ -21,13 +21,23 @@
 
     <ly-field appearance="filled" [lyWidth]="1">
       <ly-label>Email address</ly-label>
-      <input lyNativeControl type="text" formControlName="email" />
+      <input
+        lyNativeControl
+        autocomplete="username"
+        type="text"
+        formControlName="email"
+      />
       <ly-error>Required</ly-error>
     </ly-field>
 
     <ly-field appearance="filled" [lyWidth]="1">
       <ly-label>Password</ly-label>
-      <input lyNativeControl type="password" formControlName="password" />
+      <input
+        lyNativeControl
+        autocomplete="current-password"
+        type="password"
+        formControlName="password"
+      />
       <ly-error>Required</ly-error>
     </ly-field>
 
