@@ -12,10 +12,12 @@ const config: Options = {
   migrations: {
     path: './src/database/migrations',
     pattern: /^[\w-]+\d+\.[tj]s$/,
+    disableForeignKeys: false,
   },
   entities: [BaseEntity, MovieEntity],
   entitiesTs: ['src/**/*.entity.ts'],
-  dbName: 'movies-backend',
+  clientUrl:
+    'postgres://rnlyggrw:J_yJs7vDe5LoDuONHOkSpaRRC0kyqLiN@rogue.db.elephantsql.com:5432/rnlyggrw',
   type: 'postgresql',
   port: 5432,
   debug: !__prod__,
