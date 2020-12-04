@@ -43,8 +43,8 @@ export class MovieController {
   @ApiOkResponse({ description: 'Add movie' })
   @UseGuards(JwtAuthGuard)
   @Post()
-  add(@Body() { movie }: { movie: IMovie }): void {
-    this.movieService.add(movie);
+  add(@Body() { movie }: { movie: IMovie }): Promise<IMovie | HttpException> {
+    return this.movieService.add(movie);
   }
 
   @ApiOkResponse({ description: 'Delete all movies' })
@@ -57,15 +57,18 @@ export class MovieController {
   @ApiOkResponse({ description: 'Delete movie by id' })
   @UseGuards(JwtAuthGuard)
   @Delete(':id')
-  deleteById(@Param('id') id: string): void {
-    this.movieService.deleteById(id);
+  deleteById(@Param('id') id: string): Promise<IMovie | HttpException> {
+    return this.movieService.deleteById(id);
   }
 
   @ApiOkResponse({ description: 'Update movie by id' })
   @ApiBody({ type: MovieEntity })
   @UseGuards(JwtAuthGuard)
   @Put(':id')
-  updateById(@Param('id') id: string, @Body('movie') movie: IMovie): void {
-    this.movieService.updateById(id, movie);
+  updateById(
+    @Param('id') id: string,
+    @Body('movie') movie: IMovie,
+  ): Promise<IMovie | HttpException> {
+    return this.movieService.updateById(id, movie);
   }
 }

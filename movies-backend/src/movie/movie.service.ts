@@ -38,12 +38,19 @@ export class MovieService {
     }
   }
 
-  async add(movie: IMovie): Promise<void> {
+  async add(movie: IMovie): Promise<IMovie | HttpException> {
     try {
       const movieEntity = this.em.create(MovieEntity, movie);
       await this.movieRepository.persistAndFlush(movieEntity);
+
+      return movieEntity;
     } catch ({ message }) {
       Logger.error(message);
+
+      return new HttpException(
+        { Movie: `Can't add movie id = ${movie.id} ` },
+        404,
+      );
     }
   }
 
@@ -55,19 +62,33 @@ export class MovieService {
     }
   }
 
-  async deleteById(id: string): Promise<void> {
+  async deleteById(id: string): Promise<IMovie | HttpException> {
     try {
       this.movieRepository.nativeDelete({ id });
+
+      return this.movieRepository.findOne({ id });
     } catch ({ message }) {
       Logger.error(message);
+
+      return new HttpException(
+        { Movie: `Can't delete movie id = ${id} ` },
+        404,
+      );
     }
   }
 
-  async updateById(id: string, movie: IMovie): Promise<void> {
+  async updateById(id: string, movie: IMovie): Promise<IMovie | HttpException> {
     try {
       this.movieRepository.nativeUpdate(id, movie);
+
+      return this.movieRepository.findOne({ id });
     } catch ({ message }) {
       Logger.error(message);
+
+      return new HttpException(
+        { Movie: `Can't update movie id = ${id} ` },
+        404,
+      );
     }
   }
 }
