@@ -1,13 +1,19 @@
 import { Controller, Post, UseGuards, Request } from '@nestjs/common';
 import { AuthService } from './auth.service';
 import { LocalAuthGuard } from '../shared/guards/local-auth.guard';
-import { ApiBody, ApiOkResponse, ApiTags } from '@nestjs/swagger';
+import {
+  ApiBearerAuth,
+  ApiBody,
+  ApiOkResponse,
+  ApiTags,
+} from '@nestjs/swagger';
 
 export type ILogin = {
   username: string;
   password: string;
 };
 
+@ApiBearerAuth()
 @ApiTags('Login')
 @Controller('auth')
 export class AuthController {
