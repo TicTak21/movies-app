@@ -5,16 +5,15 @@ import { IMovie } from 'src/app/shared/interfaces/movie.interface';
 
 const styles = (theme: ThemeVariables) => ({
   wrapper: {
-    boxShadow: shadowBuilder(1),
     background: theme.background.tertiary,
     borderRadius: '4px',
-    display: 'flex',
-    alignItems: 'center',
+    boxShadow: shadowBuilder(1),
     padding: '1em',
   },
-  ctrlBlock: {
-    width: '100%',
-    textAlign: 'right',
+  cardCtrl: {
+    display: 'flex',
+    alignItems: 'center',
+    justifyContent: 'flex-end',
   },
 });
 

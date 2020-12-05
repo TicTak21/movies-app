@@ -1,20 +1,11 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
-import {
-  ThemeVariables,
-  ThemeRef,
-  lyl,
-  StyleRenderer,
-  LyTheme2,
-} from '@alyle/ui';
+import { ThemeVariables, lyl, StyleRenderer, LyTheme2 } from '@alyle/ui';
 import { LyDrawer } from '@alyle/ui/drawer';
 import { RouterOutlet } from '@angular/router';
 import { slideInAnimation } from './animations';
 
-const STYLES = (theme: ThemeVariables, ref: ThemeRef) => {
-  const __ = ref.selectorsOf(STYLES);
-
-  return {
-    $global: lyl`{
+const STYLES = (theme: ThemeVariables) => ({
+  $global: lyl`{
       body {
         background-color: ${theme.background.default}
         color: ${theme.text.default}
@@ -23,14 +14,14 @@ const STYLES = (theme: ThemeVariables, ref: ThemeRef) => {
         direction: ${theme.direction}
       }
     }`,
-    root: lyl`{
-      display: block
-    }`,
-  };
-};
+});
 
 const EXPANDED = '250px over@XSmall';
 const DEFAULT = '56px over@XSmall';
+const enum THEMES {
+  dark = 'minima-dark',
+  light = 'minima-light',
+}
 
 @Component({
   selector: 'app-root',
@@ -43,7 +34,7 @@ export class AppComponent implements OnInit {
   @ViewChild('drawer')
   public drawer!: LyDrawer;
 
-  public readonly _classes = this.sRenderer.renderSheet(STYLES, true);
+  public readonly classes = this.theme.addStyleSheet(STYLES);
 
   public expanded = false;
   public readonly hasBackdrop: boolean | null = false;
@@ -71,11 +62,11 @@ export class AppComponent implements OnInit {
   };
 
   public setTheme(): void {
-    if (this.theme.variables.name === 'minima-light') {
-      this.theme.setTheme('minima-dark');
+    if (this.theme.variables.name === THEMES.light) {
+      this.theme.setTheme(THEMES.dark);
       return;
     }
 
-    this.theme.setTheme('minima-light');
+    this.theme.setTheme(THEMES.light);
   }
 }

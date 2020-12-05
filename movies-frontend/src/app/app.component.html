@@ -11,8 +11,13 @@
   >
     <ly-list>
       <button ly-list-item (click)="toggleExpanded()">
-        <ly-icon ly-list-icon disablePadding>menu</ly-icon>
-        <span ly-line>Toggle menu</span>
+        <ly-icon ly-list-icon disablePadding *ngIf="expanded"
+          >menu_open</ly-icon
+        >
+        <ly-icon ly-list-icon disablePadding *ngIf="!expanded"
+          >menu_close</ly-icon
+        >
+        <span ly-line>Collapse menu</span>
       </button>
 
       <ly-divider></ly-divider>

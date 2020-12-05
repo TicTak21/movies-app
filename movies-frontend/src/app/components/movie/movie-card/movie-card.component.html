@@ -1,32 +1,41 @@
-<ly-grid container spacing="16" [className]="classes.wrapper">
-  <ly-grid item col="10">
-    <h4 ly-line>{{ movie.title }}</h4>
-    <p ly-line>{{ movie.description }}</p>
+<div [className]="classes.wrapper">
+  <ly-grid container spacing="16 8@XSmall@Small">
+    <ly-grid item col="8 12@XSmall@Small">
+      <div>
+        <h2 lyTyp="title" gutterBottom>{{ movie.title }}</h2>
+        <p ly-line>{{ movie.description }}</p>
+      </div>
+    </ly-grid>
+    <ly-grid item col="4 12@XSmall@Small">
+      <div [className]="classes.cardCtrl">
+        <button ly-button appearance="icon" color="warn" (click)="handleLike()">
+          <ly-icon *ngIf="!isLiked">favorite_outlined</ly-icon>
+          <ly-icon *ngIf="isLiked">favorite_filled</ly-icon>
+        </button>
+        <button
+          ly-button
+          appearance="icon"
+          color="secondary"
+          (click)="handleWatchLater()"
+        >
+          <ly-icon *ngIf="!isInWatchLater">watch_later</ly-icon>
+          <ly-icon *ngIf="isInWatchLater">done_all</ly-icon>
+        </button>
+        <button ly-button appearance="icon">
+          <ly-icon>share</ly-icon>
+        </button>
+      </div>
+    </ly-grid>
   </ly-grid>
-  <ly-grid item col="2" [className]="classes.ctrlBlock">
-    <button ly-button appearance="icon" color="warn" (click)="handleLike()">
-      <ly-icon *ngIf="!isLiked">favorite_outlined</ly-icon>
-      <ly-icon *ngIf="isLiked">favorite_filled</ly-icon>
-    </button>
-    <button
-      ly-button
-      appearance="icon"
-      color="secondary"
-      (click)="handleWatchLater()"
-    >
-      <ly-icon *ngIf="!isInWatchLater">watch_later</ly-icon>
-      <ly-icon *ngIf="isInWatchLater">done_all</ly-icon>
-    </button>
-  </ly-grid>
-</ly-grid>
 
-<ng-template
-  ly-snack-bar
-  #sb="lySnackBar"
-  duration="3000"
-  let-val="val"
-  let-msg="msg"
->
-  <span>{{ msg }}</span>
-  <button ly-button color="accent" (click)="sb.dismiss()">Dismiss</button>
-</ng-template>
+  <ng-template
+    ly-snack-bar
+    #sb="lySnackBar"
+    duration="3000"
+    let-val="val"
+    let-msg="msg"
+  >
+    <span>{{ msg }}</span>
+    <button ly-button color="accent" (click)="sb.dismiss()">Dismiss</button>
+  </ng-template>
+</div>
