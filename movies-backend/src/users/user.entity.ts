@@ -1,6 +1,5 @@
 // === mikro-orm ===
 import { Entity, Property } from '@mikro-orm/core';
-import { ApiProperty } from '@nestjs/swagger';
 import { IMovie } from 'src/movie/movie.interface';
 
 // === entities ===
@@ -8,6 +7,9 @@ import { BaseEntity } from '../shared/entities/base.entity';
 
 // === interfaces ===
 import { IUser } from './user.interface';
+
+// === swagger ===
+import { ApiProperty } from '@nestjs/swagger';
 
 @Entity()
 export class UserEntity extends BaseEntity implements IUser {

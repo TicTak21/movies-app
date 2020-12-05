@@ -11,7 +11,12 @@ import {
 } from '@nestjs/common';
 
 // === swagger ===
-import { ApiBody, ApiOkResponse, ApiTags } from '@nestjs/swagger';
+import {
+  ApiBearerAuth,
+  ApiBody,
+  ApiOkResponse,
+  ApiTags,
+} from '@nestjs/swagger';
 import { JwtAuthGuard } from 'src/shared/guards/auth.guard';
 
 // === entities ===
@@ -40,6 +45,7 @@ export class MovieController {
     return this.movieService.getById(id);
   }
 
+  @ApiBearerAuth()
   @ApiOkResponse({ description: 'Add movie' })
   @UseGuards(JwtAuthGuard)
   @Post()
@@ -47,6 +53,7 @@ export class MovieController {
     return this.movieService.add(movie);
   }
 
+  @ApiBearerAuth()
   @ApiOkResponse({ description: 'Delete all movies' })
   @UseGuards(JwtAuthGuard)
   @Delete()
@@ -54,6 +61,7 @@ export class MovieController {
     this.movieService.deleteAll();
   }
 
+  @ApiBearerAuth()
   @ApiOkResponse({ description: 'Delete movie by id' })
   @UseGuards(JwtAuthGuard)
   @Delete(':id')
@@ -61,6 +69,7 @@ export class MovieController {
     return this.movieService.deleteById(id);
   }
 
+  @ApiBearerAuth()
   @ApiOkResponse({ description: 'Update movie by id' })
   @ApiBody({ type: MovieEntity })
   @UseGuards(JwtAuthGuard)
