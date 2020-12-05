@@ -8,7 +8,7 @@ import { IMovie } from '../../interfaces/movie.interface';
   providedIn: 'root',
 })
 export class MovieService {
-  private readonly baseUrl = '/api/movies';
+  private readonly baseUrl = 'https://movies-backend.vercel.app/movies';
 
   constructor(private readonly httpClient: HttpClient) {}
 
