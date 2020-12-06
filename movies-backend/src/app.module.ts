@@ -20,8 +20,11 @@ import { LoggingInterceptor } from './shared/interceptors/logging.interceptor';
 
 @Module({
   imports: [
-    ConfigModule.forRoot(),
-    MikroOrmModule.forRoot(config),
+    ConfigModule.forRoot({
+      isGlobal: true,
+      load: [],
+    }),
+    MikroOrmModule.forRoot(),
     MovieModule,
     AuthModule,
     UsersModule,

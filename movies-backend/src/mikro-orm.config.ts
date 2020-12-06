@@ -17,8 +17,7 @@ const config: Options = {
   },
   entities: [BaseEntity, MovieEntity, UserEntity],
   entitiesTs: ['src/**/*.entity.ts'],
-  clientUrl:
-    'postgres://rnlyggrw:J_yJs7vDe5LoDuONHOkSpaRRC0kyqLiN@rogue.db.elephantsql.com:5432/rnlyggrw',
+  clientUrl: process.env.DATABASE_URL,
   type: 'postgresql',
   port: 5432,
   debug: !__prod__,
