@@ -2,6 +2,7 @@ import { Component, Input, OnInit, ViewChild } from '@angular/core';
 import { LySnackBar } from '@alyle/ui/snack-bar';
 import { ThemeVariables, shadowBuilder, LyTheme2 } from '@alyle/ui';
 import { IMovie } from 'src/app/shared/interfaces/movie.interface';
+import { LyDialog } from '@alyle/ui/dialog';
 
 const styles = (theme: ThemeVariables) => ({
   wrapper: {
@@ -32,7 +33,10 @@ export class MovieCardComponent implements OnInit {
 
   public readonly classes = this.theme.addStyleSheet(styles);
 
-  constructor(private readonly theme: LyTheme2) {}
+  constructor(
+    private readonly theme: LyTheme2,
+    public readonly dialog: LyDialog,
+  ) {}
 
   ngOnInit(): void {}
 

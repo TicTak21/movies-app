@@ -19,6 +19,13 @@ import {
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MinimaLight, MinimaDark } from '@alyle/ui/themes/minima';
 
+// === shared ===
+import { SortByPipe } from './shared/pipes/sort-by/sort-by.pipe';
+
+// === ngx-sharebuttons ===
+import { ShareModule } from 'ngx-sharebuttons';
+import { ShareIconsModule } from 'ngx-sharebuttons/icons';
+
 // === Ly ===
 import { LySnackBarModule } from '@alyle/ui/snack-bar';
 import { LyBadgeModule } from '@alyle/ui/badge';
@@ -33,8 +40,8 @@ import { LyToolbarModule } from '@alyle/ui/toolbar';
 import { LyTypographyModule } from '@alyle/ui/typography';
 import { LyGridModule } from '@alyle/ui/grid';
 import { LyDividerModule } from '@alyle/ui/divider';
-import { LyTooltipModule } from '@alyle/ui/tooltip';
 import { LyFieldModule } from '@alyle/ui/field';
+import { LyDialogModule } from '@alyle/ui/dialog';
 
 // === components ===
 import { AppComponent } from './app.component';
@@ -45,8 +52,6 @@ import { HomeComponent } from './pages/home/home.component';
 import { AboutComponent } from './pages/about/about.component';
 import { MovieListComponent } from './components/movie/movie-list/movie-list.component';
 import { MovieComponent } from './pages/movie/movie.component';
-import { SortByPipe } from './shared/pipes/sort-by/sort-by.pipe';
-import { RouterModule } from '@angular/router';
 
 @NgModule({
   declarations: [
@@ -82,7 +87,9 @@ import { RouterModule } from '@angular/router';
     LySnackBarModule,
     LyGridModule,
     LyDividerModule,
-    LyTooltipModule,
+    LyDialogModule,
+    ShareModule,
+    ShareIconsModule,
   ],
   providers: [
     { provide: HAMMER_GESTURE_CONFIG, useClass: LyHammerGestureConfig },
