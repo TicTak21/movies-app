@@ -6,6 +6,9 @@ import { ConfigModule } from '@nestjs/config';
 // === controllers ===
 import { AppController } from './app.controller';
 
+// === configs ===
+import config from './mikro-orm.config';
+
 // === modules
 import { MovieModule } from './movie/movie.module';
 import { AuthModule } from './auth/auth.module';
@@ -19,9 +22,8 @@ import { LoggingInterceptor } from './shared/interceptors/logging.interceptor';
   imports: [
     ConfigModule.forRoot({
       isGlobal: true,
-      load: [],
     }),
-    MikroOrmModule.forRoot(),
+    MikroOrmModule.forRoot(config),
     MovieModule,
     AuthModule,
     UsersModule,
