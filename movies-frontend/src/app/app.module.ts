@@ -55,6 +55,8 @@ import { MovieListComponent } from './components/movie/movie-list/movie-list.com
 import { MovieComponent } from './pages/movie/movie.component';
 import { ShareDialogComponent } from './components/share-dialog/share-dialog.component';
 import { SpinnerComponent } from './components/spinner/spinner.component';
+import { ServiceWorkerModule } from '@angular/service-worker';
+import { environment } from '../environments/environment';
 
 @NgModule({
   declarations: [
@@ -96,6 +98,7 @@ import { SpinnerComponent } from './components/spinner/spinner.component';
     ShareModule,
     LyOverlayModule,
     LySkeletonModule,
+    ServiceWorkerModule.register('ngsw-worker.js', { enabled: environment.production }),
   ],
   providers: [
     { provide: HAMMER_GESTURE_CONFIG, useClass: LyHammerGestureConfig },
