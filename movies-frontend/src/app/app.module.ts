@@ -42,7 +42,7 @@ import { LyDividerModule } from '@alyle/ui/divider';
 import { LyFieldModule } from '@alyle/ui/field';
 import { LyDialogModule } from '@alyle/ui/dialog';
 import { LyOverlayModule } from '@alyle/ui';
-import { LySkeletonModule } from '@alyle/ui/skeleton';
+import { LyCarouselModule } from '@alyle/ui/carousel';
 
 // === components ===
 import { AppComponent } from './app.component';
@@ -97,8 +97,10 @@ import { environment } from '../environments/environment';
     LyDialogModule,
     ShareModule,
     LyOverlayModule,
-    LySkeletonModule,
-    ServiceWorkerModule.register('ngsw-worker.js', { enabled: environment.production }),
+    LyCarouselModule,
+    ServiceWorkerModule.register('ngsw-worker.js', {
+      enabled: environment.production,
+    }),
   ],
   providers: [
     { provide: HAMMER_GESTURE_CONFIG, useClass: LyHammerGestureConfig },
