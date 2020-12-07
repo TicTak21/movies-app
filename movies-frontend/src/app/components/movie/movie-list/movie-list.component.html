@@ -1,3 +1,19 @@
-<ly-list *ngFor="let movie of movies$ | async">
-  <app-movie-card [movie]="movie"></app-movie-card>
-</ly-list>
+<div *ngIf="movies$ | async as movies; else loading">
+  <div [className]="classes.listTitle">
+    <h1 lyTyp="display1" gutterBottom>Movies</h1>
+
+    <button ly-button appearance="miniFab">
+      <ly-icon lyBadge="{{ movies.length }}" lyBadgeBg="accent">movies</ly-icon>
+    </button>
+  </div>
+
+  <div *ngIf="movies.length === 0">No movies here...</div>
+
+  <ly-list *ngFor="let movie of movies">
+    <app-movie-card [movie]="movie"></app-movie-card>
+  </ly-list>
+</div>
+
+<ng-template #loading>
+  <app-spinner></app-spinner>
+</ng-template>

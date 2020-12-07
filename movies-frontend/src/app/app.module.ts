@@ -42,6 +42,7 @@ import { LyDividerModule } from '@alyle/ui/divider';
 import { LyFieldModule } from '@alyle/ui/field';
 import { LyDialogModule } from '@alyle/ui/dialog';
 import { LyOverlayModule } from '@alyle/ui';
+import { LySkeletonModule } from '@alyle/ui/skeleton';
 
 // === components ===
 import { AppComponent } from './app.component';
@@ -53,6 +54,7 @@ import { AboutComponent } from './pages/about/about.component';
 import { MovieListComponent } from './components/movie/movie-list/movie-list.component';
 import { MovieComponent } from './pages/movie/movie.component';
 import { ShareDialogComponent } from './components/share-dialog/share-dialog.component';
+import { SpinnerComponent } from './components/spinner/spinner.component';
 
 @NgModule({
   declarations: [
@@ -66,6 +68,7 @@ import { ShareDialogComponent } from './components/share-dialog/share-dialog.com
     MovieComponent,
     SortByPipe,
     ShareDialogComponent,
+    SpinnerComponent,
   ],
   imports: [
     BrowserModule,
@@ -92,6 +95,7 @@ import { ShareDialogComponent } from './components/share-dialog/share-dialog.com
     LyDialogModule,
     ShareModule,
     LyOverlayModule,
+    LySkeletonModule,
   ],
   providers: [
     { provide: HAMMER_GESTURE_CONFIG, useClass: LyHammerGestureConfig },
