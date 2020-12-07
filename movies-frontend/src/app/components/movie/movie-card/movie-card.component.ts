@@ -16,6 +16,10 @@ const styles = (theme: ThemeVariables) => ({
     alignItems: 'center',
     justifyContent: 'flex-end',
   },
+  dialog: {
+    display: 'grid',
+    justifyItems: 'center',
+  },
 });
 
 @Component({
