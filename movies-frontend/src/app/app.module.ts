@@ -24,7 +24,6 @@ import { SortByPipe } from './shared/pipes/sort-by/sort-by.pipe';
 
 // === ngx-sharebuttons ===
 import { ShareModule } from 'ngx-sharebuttons';
-import { ShareIconsModule } from 'ngx-sharebuttons/icons';
 
 // === Ly ===
 import { LySnackBarModule } from '@alyle/ui/snack-bar';
@@ -89,7 +88,6 @@ import { MovieComponent } from './pages/movie/movie.component';
     LyDividerModule,
     LyDialogModule,
     ShareModule,
-    ShareIconsModule,
   ],
   providers: [
     { provide: HAMMER_GESTURE_CONFIG, useClass: LyHammerGestureConfig },
