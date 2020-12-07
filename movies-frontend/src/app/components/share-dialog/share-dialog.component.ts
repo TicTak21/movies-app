@@ -10,12 +10,12 @@ const styles = {
 };
 
 @Component({
-  selector: 'app-dialog',
-  templateUrl: './dialog.component.html',
-  styleUrls: ['./dialog.component.scss'],
+  selector: 'app-share-dialog',
+  templateUrl: './share-dialog.component.html',
+  styleUrls: ['./share-dialog.component.scss'],
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class DialogComponent {
+export class ShareDialogComponent {
   public readonly classes = this.theme.addStyleSheet(styles);
 
   constructor(

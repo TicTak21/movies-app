@@ -52,7 +52,7 @@ import { HomeComponent } from './pages/home/home.component';
 import { AboutComponent } from './pages/about/about.component';
 import { MovieListComponent } from './components/movie/movie-list/movie-list.component';
 import { MovieComponent } from './pages/movie/movie.component';
-import { DialogComponent } from './components/dialog/dialog.component';
+import { ShareDialogComponent } from './components/share-dialog/share-dialog.component';
 
 @NgModule({
   declarations: [
@@ -65,7 +65,7 @@ import { DialogComponent } from './components/dialog/dialog.component';
     MovieListComponent,
     MovieComponent,
     SortByPipe,
-    DialogComponent,
+    ShareDialogComponent,
   ],
   imports: [
     BrowserModule,

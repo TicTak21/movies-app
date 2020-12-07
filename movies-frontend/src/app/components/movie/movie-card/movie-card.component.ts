@@ -9,7 +9,7 @@ import { LySnackBar } from '@alyle/ui/snack-bar';
 import { ThemeVariables, shadowBuilder, LyTheme2 } from '@alyle/ui';
 import { IMovie } from 'src/app/shared/interfaces/movie.interface';
 import { LyDialog } from '@alyle/ui/dialog';
-import { DialogComponent } from 'src/app/components/dialog/dialog.component';
+import { ShareDialogComponent } from 'src/app/components/share-dialog/share-dialog.component';
 
 const styles = (theme: ThemeVariables) => ({
   wrapper: {
@@ -49,7 +49,9 @@ export class MovieCardComponent implements OnInit {
   ngOnInit(): void {}
 
   public openDialog() {
-    const dialogRef = this.dialog.open<DialogComponent>(DialogComponent);
+    const dialogRef = this.dialog.open<ShareDialogComponent>(
+      ShareDialogComponent,
+    );
     dialogRef.afterClosed.subscribe(result => console.log(result));
   }
 
