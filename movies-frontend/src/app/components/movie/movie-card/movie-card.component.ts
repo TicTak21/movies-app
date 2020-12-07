@@ -1,8 +1,15 @@
-import { Component, Input, OnInit, ViewChild } from '@angular/core';
+import {
+  ChangeDetectionStrategy,
+  Component,
+  Input,
+  OnInit,
+  ViewChild,
+} from '@angular/core';
 import { LySnackBar } from '@alyle/ui/snack-bar';
 import { ThemeVariables, shadowBuilder, LyTheme2 } from '@alyle/ui';
 import { IMovie } from 'src/app/shared/interfaces/movie.interface';
 import { LyDialog } from '@alyle/ui/dialog';
+import { DialogComponent } from 'src/app/components/dialog/dialog.component';
 
 const styles = (theme: ThemeVariables) => ({
   wrapper: {
@@ -16,16 +23,13 @@ const styles = (theme: ThemeVariables) => ({
     alignItems: 'center',
     justifyContent: 'flex-end',
   },
-  dialog: {
-    display: 'grid',
-    justifyItems: 'center',
-  },
 });
 
 @Component({
   selector: 'app-movie-card',
   templateUrl: './movie-card.component.html',
   styleUrls: ['./movie-card.component.scss'],
+  changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class MovieCardComponent implements OnInit {
   @Input() public movie!: IMovie;
@@ -44,25 +48,24 @@ export class MovieCardComponent implements OnInit {
 
   ngOnInit(): void {}
 
-  public handleLike() {
-    let msg = ``;
-    if (this.isLiked) {
-      msg += `Unliked`;
-    } else {
-      msg += `Liked`;
-    }
+  public openDialog() {
+    const dialogRef = this.dialog.open<DialogComponent>(DialogComponent);
+    dialogRef.afterClosed.subscribe(result => console.log(result));
+  }
 
-    this.openSnack(msg);
+  public handleLike() {
     this.isLiked = !this.isLiked;
   }
 
   public handleWatchLater() {
     let msg = ``;
+
     if (this.isInWatchLater) {
       msg += `Removed from Watch later`;
     } else {
       msg += `Added to Watch later`;
     }
+
     this.openSnack(msg);
     this.isInWatchLater = !this.isInWatchLater;
   }

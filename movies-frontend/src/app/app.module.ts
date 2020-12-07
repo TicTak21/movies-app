@@ -41,6 +41,7 @@ import { LyGridModule } from '@alyle/ui/grid';
 import { LyDividerModule } from '@alyle/ui/divider';
 import { LyFieldModule } from '@alyle/ui/field';
 import { LyDialogModule } from '@alyle/ui/dialog';
+import { LyOverlayModule } from '@alyle/ui';
 
 // === components ===
 import { AppComponent } from './app.component';
@@ -51,6 +52,7 @@ import { HomeComponent } from './pages/home/home.component';
 import { AboutComponent } from './pages/about/about.component';
 import { MovieListComponent } from './components/movie/movie-list/movie-list.component';
 import { MovieComponent } from './pages/movie/movie.component';
+import { DialogComponent } from './components/dialog/dialog.component';
 
 @NgModule({
   declarations: [
@@ -63,6 +65,7 @@ import { MovieComponent } from './pages/movie/movie.component';
     MovieListComponent,
     MovieComponent,
     SortByPipe,
+    DialogComponent,
   ],
   imports: [
     BrowserModule,
@@ -88,6 +91,7 @@ import { MovieComponent } from './pages/movie/movie.component';
     LyDividerModule,
     LyDialogModule,
     ShareModule,
+    LyOverlayModule,
   ],
   providers: [
     { provide: HAMMER_GESTURE_CONFIG, useClass: LyHammerGestureConfig },

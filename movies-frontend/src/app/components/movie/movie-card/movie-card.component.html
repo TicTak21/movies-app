@@ -22,82 +22,12 @@
           <ly-icon *ngIf="!isInWatchLater">watch_later</ly-icon>
           <ly-icon *ngIf="isInWatchLater">done_all</ly-icon>
         </button>
-        <button ly-button appearance="icon" (click)="dialog.open(_template)">
+        <button ly-button appearance="icon" (click)="openDialog()">
           <ly-icon>share</ly-icon>
         </button>
       </div>
     </ly-grid>
   </ly-grid>
-
-  <ng-template #_template let-dialogRef>
-    <div>
-      <div [className]="classes.dialog">
-        <!-- Container is required. -->
-        <h4 ly-dialog-title>Share</h4>
-        <div ly-dialog-content>
-          <button
-            ly-button
-            shareButton="twitter"
-            #twtBtn="shareButton"
-            appearance="fab"
-            description="Movies-App"
-            url="https://movies-app-neon.vercel.app/home"
-          >
-            <i class="fa fa-twitter fa-2x"></i>
-          </button>
-
-          <button
-            ly-button
-            shareButton="facebook"
-            #twtBtn="shareButton"
-            appearance="fab"
-            description="Movies-App"
-            url="https://movies-app-neon.vercel.app/home"
-          >
-            <i class="fa fa-facebook-f fa-2x"></i>
-          </button>
-
-          <button
-            ly-button
-            shareButton="telegram"
-            #twtBtn="shareButton"
-            appearance="fab"
-            description="Movies-App"
-            url="https://movies-app-neon.vercel.app/home"
-          >
-            <i class="fa fa-telegram fa-2x"></i>
-          </button>
-
-          <button
-            ly-button
-            shareButton="linkedin"
-            #twtBtn="shareButton"
-            appearance="fab"
-            description="Movies-App"
-            url="https://movies-app-neon.vercel.app/home"
-          >
-            <i class="fa fa-linkedin fa-2x"></i>
-          </button>
-
-          <button
-            ly-button
-            shareButton="pinterest"
-            #twtBtn="shareButton"
-            appearance="fab"
-            description="Movies-App"
-            url="https://movies-app-neon.vercel.app/home"
-          >
-            <i class="fa fa-pinterest fa-2x"></i>
-          </button>
-        </div>
-        <div ly-dialog-actions>
-          <button ly-button color="primary" (click)="dialogRef.close()">
-            Close
-          </button>
-        </div>
-      </div>
-    </div>
-  </ng-template>
 
   <ng-template
     ly-snack-bar
