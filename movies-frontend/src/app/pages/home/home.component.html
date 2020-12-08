@@ -2,25 +2,12 @@
 
 <p gutterBottom>
   These images are generally accompanied by sound, and more rarely, other
-  sensory stimulations.[1] The word "cinema", short for cinematography, is often
+  sensory stimulations. The word "cinema", short for cinematography, is often
   used to refer to filmmaking and the film industry, and to the art form that is
   the result of it.
 </p>
 
-<ly-carousel
-  [withClass]="classes.carousel"
-  touch
-  hasProgressBar
-  pauseOnHover
-  [interval]="carouselInterval"
->
-  <ly-carousel-item
-    *ngFor="let item of items"
-    [withClass]="classes.carouselItem"
-    [srcImg]="item.img"
-    ><h1 lyTyp="display1" gutter>{{ item.title }}</h1>
-  </ly-carousel-item>
-</ly-carousel>
+<app-carousel [items]="carouselItems"></app-carousel>
 
 <p gutterBottom>
   The individual images that make up a film are called frames. In the projection

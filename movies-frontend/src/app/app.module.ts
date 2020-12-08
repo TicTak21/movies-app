@@ -57,6 +57,7 @@ import { ShareDialogComponent } from './components/share-dialog/share-dialog.com
 import { SpinnerComponent } from './components/spinner/spinner.component';
 import { ServiceWorkerModule } from '@angular/service-worker';
 import { environment } from '../environments/environment';
+import { CarouselComponent } from './components/carousel/carousel.component';
 
 @NgModule({
   declarations: [
@@ -71,6 +72,7 @@ import { environment } from '../environments/environment';
     SortByPipe,
     ShareDialogComponent,
     SpinnerComponent,
+    CarouselComponent,
   ],
   imports: [
     BrowserModule,

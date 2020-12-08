@@ -1,0 +1,11 @@
+<div *ngIf="items.length !== 0">
+  <ly-carousel [withClass]="classes.carousel" touch hasProgressBar>
+    <ly-carousel-item
+      *ngFor="let item of items"
+      [withClass]="classes.carouselItem"
+      [srcImg]="item.img"
+    >
+      <h1 lyTyp="display1" gutter>{{ item.title }}</h1>
+    </ly-carousel-item>
+  </ly-carousel>
+</div>

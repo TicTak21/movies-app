@@ -1,36 +1,14 @@
 /* eslint-disable max-len */
-import { LyTheme2 } from '@alyle/ui';
-import { ChangeDetectionStrategy, Component, OnInit } from '@angular/core';
-
-const styles = {
-  carousel: {
-    margin: '1em auto',
-    maxWidth: '540px',
-    height: '50vh',
-    minHeight: '220px',
-    maxHeight: '320px',
-  },
-  carouselItem: {
-    display: 'flex',
-    textAlign: 'center',
-    justifyContent: 'flex-end',
-    alignItems: 'center',
-    height: '100%',
-    flexDirection: 'column',
-    padding: '1em 1em 48px',
-    boxSizing: 'border-box',
-    color: '#fff',
-  },
-};
+import { Component, OnInit } from '@angular/core';
+import { ICarouselItem } from 'src/app/shared/types/ui.types';
 
 @Component({
   selector: 'app-home',
   templateUrl: './home.component.html',
   styleUrls: ['./home.component.scss'],
-  changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class HomeComponent implements OnInit {
-  public readonly items = [
+  public readonly carouselItems: ICarouselItem[] = [
     {
       title: 'Watch',
       img:
@@ -48,11 +26,7 @@ export class HomeComponent implements OnInit {
     },
   ];
 
-  public readonly carouselInterval = 8000;
-
-  public readonly classes = this.theme.addStyleSheet(styles);
-
-  constructor(private readonly theme: LyTheme2) {}
+  constructor() {}
 
   ngOnInit(): void {}
 }
