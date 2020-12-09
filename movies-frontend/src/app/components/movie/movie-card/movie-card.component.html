@@ -1,8 +1,29 @@
 <div [className]="classes.wrapper">
   <ly-grid container spacing="16 8@XSmall@Small">
     <ly-grid item col="8 12@XSmall@Small">
-      <div>
-        <h2 lyTyp="title" gutterBottom>{{ movie.title }}</h2>
+      <div [className]="classes.cardBody">
+        <h2 lyTyp="headline" gutterBottom>{{ movie.title }}</h2>
+
+        <div [className]="classes.cardInfo">
+          <div>
+            <ly-icon ly-icon color="primary">stars</ly-icon>
+            <span>{{ (movie.rating * 10).toFixed(2) }}%</span>
+          </div>
+          <div>
+            <ly-icon ly-icon>visibility</ly-icon>
+            <span>{{ movie.views }}</span>
+          </div>
+          <div>
+            <ly-icon ly-icon>location_on</ly-icon>
+            <span>{{ movie.country }}</span>
+          </div>
+          <div>
+            <ly-icon ly-icon *ngIf="movie.adult" color="primary"
+              >explicit</ly-icon
+            >
+          </div>
+        </div>
+
         <p ly-line>{{ movie.description }}</p>
       </div>
     </ly-grid>

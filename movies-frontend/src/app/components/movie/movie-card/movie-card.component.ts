@@ -15,8 +15,23 @@ const styles = (theme: ThemeVariables) => ({
   wrapper: {
     background: theme.background.tertiary,
     borderRadius: '4px',
-    boxShadow: shadowBuilder(1),
+    boxShadow: shadowBuilder(2),
     padding: '1em',
+  },
+  cardBody: {
+    display: 'grid',
+    gap: '0.5em',
+  },
+  cardInfo: {
+    display: 'flex',
+    gap: '1em',
+    flexWrap: 'wrap',
+
+    '& > *': {
+      display: 'flex',
+      gap: '0.25em',
+      alignItems: 'center',
+    },
   },
   cardCtrl: {
     display: 'flex',
@@ -32,7 +47,7 @@ const styles = (theme: ThemeVariables) => ({
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class MovieCardComponent implements OnInit {
-  @Input() public movie!: IMovie;
+  @Input() public movie: IMovie = {} as IMovie;
   @ViewChild('sb')
   public sb!: LySnackBar;
 
@@ -49,10 +64,7 @@ export class MovieCardComponent implements OnInit {
   ngOnInit(): void {}
 
   public openDialog() {
-    const dialogRef = this.dialog.open<ShareDialogComponent>(
-      ShareDialogComponent,
-    );
-    dialogRef.afterClosed.subscribe(result => console.log(result));
+    this.dialog.open<ShareDialogComponent>(ShareDialogComponent);
   }
 
   public handleLike() {
