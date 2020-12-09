@@ -43,6 +43,7 @@ import { LyFieldModule } from '@alyle/ui/field';
 import { LyDialogModule } from '@alyle/ui/dialog';
 import { LyOverlayModule } from '@alyle/ui';
 import { LyCarouselModule } from '@alyle/ui/carousel';
+import { LySelectModule } from '@alyle/ui/select';
 
 // === components ===
 import { AppComponent } from './app.component';
@@ -58,6 +59,7 @@ import { SpinnerComponent } from './components/spinner/spinner.component';
 import { ServiceWorkerModule } from '@angular/service-worker';
 import { environment } from '../environments/environment';
 import { CarouselComponent } from './components/carousel/carousel.component';
+import { SelectFilterComponent } from './components/select-filter/select-filter.component';
 
 @NgModule({
   declarations: [
@@ -73,6 +75,7 @@ import { CarouselComponent } from './components/carousel/carousel.component';
     ShareDialogComponent,
     SpinnerComponent,
     CarouselComponent,
+    SelectFilterComponent,
   ],
   imports: [
     BrowserModule,
@@ -100,6 +103,7 @@ import { CarouselComponent } from './components/carousel/carousel.component';
     ShareModule,
     LyOverlayModule,
     LyCarouselModule,
+    LySelectModule,
     ServiceWorkerModule.register('ngsw-worker.js', {
       enabled: environment.production,
     }),

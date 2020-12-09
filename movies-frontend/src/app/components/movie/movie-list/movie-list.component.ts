@@ -3,6 +3,13 @@ import { Component, Input, OnInit } from '@angular/core';
 import { Observable } from 'rxjs';
 
 const style = {
+  listHeader: {
+    display: 'flex',
+    alignItems: 'center',
+    justifyContent: 'space-between',
+    gap: '1em',
+    flexWrap: 'wrap',
+  },
   listTitle: {
     display: 'flex',
     alignItems: 'center',
