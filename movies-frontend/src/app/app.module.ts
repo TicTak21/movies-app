@@ -60,6 +60,7 @@ import { ServiceWorkerModule } from '@angular/service-worker';
 import { environment } from '../environments/environment';
 import { CarouselComponent } from './components/carousel/carousel.component';
 import { SelectFilterComponent } from './components/select-filter/select-filter.component';
+import { MovieDetailsComponent } from './pages/movie/movie-details/movie-details.component';
 
 @NgModule({
   declarations: [
@@ -76,6 +77,7 @@ import { SelectFilterComponent } from './components/select-filter/select-filter.
     SpinnerComponent,
     CarouselComponent,
     SelectFilterComponent,
+    MovieDetailsComponent,
   ],
   imports: [
     BrowserModule,

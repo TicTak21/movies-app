@@ -2,7 +2,9 @@
   <ly-grid container spacing="16 8@XSmall@Small">
     <ly-grid item col="8 12@XSmall@Small">
       <div [className]="classes.cardBody">
-        <h2 lyTyp="headline" gutterBottom>{{ movie.title }}</h2>
+        <h2 lyTyp="headline" gutterBottom>
+          <a routerLink="/movies/{{ movie.id }}">{{ movie.title }}</a>
+        </h2>
 
         <div [className]="classes.cardInfo">
           <div>
