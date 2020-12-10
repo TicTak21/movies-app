@@ -6,25 +6,12 @@
           <a routerLink="/movies/{{ movie.id }}">{{ movie.title }}</a>
         </h2>
 
-        <div [className]="classes.cardInfo">
-          <div>
-            <ly-icon ly-icon color="primary">stars</ly-icon>
-            <span>{{ (movie.rating * 10).toFixed(2) }}%</span>
-          </div>
-          <div>
-            <ly-icon ly-icon>visibility</ly-icon>
-            <span>{{ movie.views }}</span>
-          </div>
-          <div>
-            <ly-icon ly-icon>location_on</ly-icon>
-            <span>{{ movie.country }}</span>
-          </div>
-          <div>
-            <ly-icon ly-icon *ngIf="movie.adult" color="primary"
-              >explicit</ly-icon
-            >
-          </div>
-        </div>
+        <app-movie-card-info
+          rating="{{ movie.rating }}"
+          views="{{ movie.views }}"
+          country="{{ movie.country }}"
+          adult="{{ movie.adult }}"
+        ></app-movie-card-info>
 
         <p lyTyp="body1" gutterBottom>{{ movie.description }}</p>
       </div>

@@ -1,0 +1,17 @@
+<div [className]="classes.cardInfo">
+  <div>
+    <ly-icon ly-icon color="primary">stars</ly-icon>
+    <span>{{ rating }}</span>
+  </div>
+  <div>
+    <ly-icon ly-icon>visibility</ly-icon>
+    <span>{{ views }}</span>
+  </div>
+  <div>
+    <ly-icon ly-icon>location_on</ly-icon>
+    <span>{{ country }}</span>
+  </div>
+  <div>
+    <ly-icon ly-icon *ngIf="adult" color="primary">explicit</ly-icon>
+  </div>
+</div>

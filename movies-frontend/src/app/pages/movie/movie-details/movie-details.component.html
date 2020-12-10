@@ -1,3 +1,16 @@
-<h1 lyTyp="display1" gutterBottom>{{ movie.title }}</h1>
+<div *ngIf="movie$ | async as movie; else loading">
+  <h1 lyTyp="display1" gutterBottom>{{ movie.title }}</h1>
 
-<p lyTyp="body1" gutterBottom>{{ movie.description }}</p>
+  <app-movie-card-info
+    rating="{{ movie.rating }}"
+    views="{{ movie.views }}"
+    country="{{ movie.country }}"
+    adult="{{ movie.adult }}"
+  ></app-movie-card-info>
+
+  <p lyTyp="body1" gutterBottom>{{ movie.description }}</p>
+</div>
+
+<ng-template #loading>
+  <app-spinner></app-spinner>
+</ng-template>

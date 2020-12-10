@@ -22,17 +22,6 @@ const styles = (theme: ThemeVariables) => ({
     display: 'grid',
     gap: '0.5em',
   },
-  cardInfo: {
-    display: 'flex',
-    gap: '1em',
-    flexWrap: 'wrap',
-
-    '& > *': {
-      display: 'flex',
-      gap: '0.25em',
-      alignItems: 'center',
-    },
-  },
   cardCtrl: {
     display: 'flex',
     alignItems: 'center',
