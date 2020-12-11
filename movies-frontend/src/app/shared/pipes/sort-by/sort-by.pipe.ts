@@ -1,21 +1,38 @@
 import { Pipe, PipeTransform } from '@angular/core';
-
-const enum ESortOrder {
-  asc = 'ASC',
-  desc = 'DESC',
-}
+import { ESortOrder } from '../../enums/sort.enum';
 
 @Pipe({
   name: 'sortBy',
 })
 export class SortByPipe implements PipeTransform {
-  transform<T extends { prop: 'name' }>(
+  transform<T extends { [key: string]: keyof T }>(
     array: T[],
-    order: ESortOrder = ESortOrder.desc,
-    prop: string = '',
+    options: {
+      prop: string;
+      order: ESortOrder;
+    },
   ): T[] {
-    console.log(array, order, prop);
+    const { prop, order = ESortOrder.asc } = options;
 
-    return array.sort((a, b) => a.prop.localeCompare(b.prop));
+    switch (order) {
+      case ESortOrder.asc:
+        return array.sort((a, b) => {
+          const prop1 = a[prop].toString();
+          const prop2 = b[prop].toString();
+
+          return prop1.localeCompare(prop2);
+        });
+
+      case ESortOrder.desc:
+        return array.sort((a, b) => {
+          const prop1 = a[prop].toString();
+          const prop2 = b[prop].toString();
+
+          return prop2.localeCompare(prop1);
+        });
+
+      default:
+        return array;
+    }
   }
 }

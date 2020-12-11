@@ -1,9 +1,15 @@
 <ly-field>
   <ly-label>Sort by</ly-label>
-  <select lyNativeControl [(ngModel)]="selected">
-    <option value="1">Title (A-Z)</option>
-    <option value="2">Title (Z-A)</option>
-    <option value="3">Release Date</option>
-    <option value="4">Popularity</option>
+  <select
+    lyNativeControl
+    [(ngModel)]="activeFilter"
+    (ngModelChange)="activeFilterChange.emit($event)"
+    ngControl="activeFilter"
+    name="activeFilter"
+  >
+    <option value="title">Title (A-Z)</option>
+    <!-- <option value="title">Title (Z-A)</option> -->
+    <option value="views">Views (up)</option>
+    <!-- <option value="views">Views (down)</option> -->
   </select>
 </ly-field>

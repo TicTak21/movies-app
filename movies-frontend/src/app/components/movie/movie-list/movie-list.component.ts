@@ -1,6 +1,7 @@
 import { LyTheme2 } from '@alyle/ui';
 import { Component, Input, OnInit } from '@angular/core';
 import { Observable } from 'rxjs';
+import { ESortOrder } from 'src/app/shared/enums/sort.enum';
 
 const style = {
   listHeader: {
@@ -25,9 +26,18 @@ export class MovieListComponent implements OnInit {
   @Input()
   public movies$: Observable<[]> = new Observable<[]>();
 
+  public activeFilter = 'views';
+
   public readonly classes = this.theme.addStyleSheet(style);
 
   constructor(private readonly theme: LyTheme2) {}
+
+  public getSortConfig() {
+    return {
+      prop: this.activeFilter,
+      order: 'ASC',
+    };
+  }
 
   ngOnInit(): void {}
 }

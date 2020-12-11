@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 
 @Component({
   selector: 'app-select-filter',
@@ -6,7 +6,9 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./select-filter.component.scss'],
 })
 export class SelectFilterComponent implements OnInit {
-  public selected = 1;
+  @Output()
+  public activeFilterChange: EventEmitter<string> = new EventEmitter<string>();
+  @Input() public activeFilter = 'title';
 
   constructor() {}
 

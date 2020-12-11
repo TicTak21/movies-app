@@ -11,13 +11,13 @@
     </div>
 
     <div>
-      <app-select-filter></app-select-filter>
+      <app-select-filter [(activeFilter)]="activeFilter"></app-select-filter>
     </div>
   </div>
 
   <div *ngIf="movies.length === 0">No movies here...</div>
 
-  <ly-list *ngFor="let movie of movies">
+  <ly-list *ngFor="let movie of movies | sortBy: getSortConfig()">
     <app-movie-card [movie]="movie"></app-movie-card>
   </ly-list>
 </div>
