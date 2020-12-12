@@ -1,8 +1,15 @@
+import { LyTheme2 } from '@alyle/ui';
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { Observable } from 'rxjs';
-import { IMovie } from 'src/app/shared/interfaces/movie.interface';
 import { MovieService } from 'src/app/shared/services/movie/movie.service';
+
+const styles = {
+  root: {
+    display: 'grid',
+    gap: '0.5em',
+  },
+};
 
 @Component({
   selector: 'app-movie-details',
@@ -12,9 +19,12 @@ import { MovieService } from 'src/app/shared/services/movie/movie.service';
 export class MovieDetailsComponent implements OnInit {
   public movie$: Observable<[]> = new Observable<[]>();
 
+  public classes = this.theme.addStyleSheet(styles);
+
   constructor(
     private readonly activatedRoute: ActivatedRoute,
     private readonly movieService: MovieService,
+    private readonly theme: LyTheme2,
   ) {}
 
   ngOnInit(): void {
