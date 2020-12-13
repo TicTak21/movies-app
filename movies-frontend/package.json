@@ -23,6 +23,7 @@
     "@angular/router": "~11.0.1",
     "@angular/service-worker": "~11.0.1",
     "hammerjs": "^2.0.8",
+    "movie-trailer": "^2.0.6",
     "ngx-sharebuttons": "^8.0.4",
     "rxjs": "~6.6.0",
     "tslib": "^2.0.0",

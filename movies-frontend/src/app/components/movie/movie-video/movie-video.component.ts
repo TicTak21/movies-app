@@ -1,6 +1,7 @@
 import { LyTheme2 } from '@alyle/ui';
 import { Component, Input, OnInit } from '@angular/core';
-import { DomSanitizer } from '@angular/platform-browser';
+import { DomSanitizer, SafeResourceUrl } from '@angular/platform-browser';
+import { MovieService } from 'src/app/shared/services/movie/movie.service';
 
 const styles = {
   wrapper: {
@@ -25,11 +26,39 @@ const styles = {
   styleUrls: ['./movie-video.component.scss'],
 })
 export class MovieVideoComponent implements OnInit {
-  @Input() public videoUrl = '';
+  @Input() public title = '';
+  public initialUrl = '';
 
   public readonly classes = this.theme.addStyleSheet(styles);
 
-  constructor(private readonly theme: LyTheme2) {}
+  private baseEmbedUrl = 'https://www.youtube.com/embed/';
 
-  ngOnInit(): void {}
+  constructor(
+    private readonly theme: LyTheme2,
+    private readonly sanitizer: DomSanitizer,
+    private readonly movieService: MovieService,
+  ) {}
+
+  public getEmbedUrl(): SafeResourceUrl {
+    const id = this.getIdFromUrl(this.initialUrl);
+    const embedUrl = `${this.baseEmbedUrl}${id}`;
+
+    return this.sanitizeUrl(embedUrl);
+  }
+
+  ngOnInit(): void {
+    this.getInitialUrl(this.title);
+  }
+
+  private async getInitialUrl(title: string): Promise<void> {
+    this.initialUrl = await this.movieService.getMovieTrailer(title);
+  }
+
+  private getIdFromUrl(url: string): string {
+    return url.substr(url.lastIndexOf('v=') + 2, 11);
+  }
+
+  private sanitizeUrl(url: string): SafeResourceUrl {
+    return this.sanitizer.bypassSecurityTrustResourceUrl(url);
+  }
 }

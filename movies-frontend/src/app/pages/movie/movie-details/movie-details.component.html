@@ -10,7 +10,7 @@
 
   <p lyTyp="body1" gutterBottom>{{ movie.description }}</p>
 
-  <app-movie-video></app-movie-video>
+  <app-movie-video [title]="movie.title"></app-movie-video>
 </div>
 
 <ng-template #loading>
