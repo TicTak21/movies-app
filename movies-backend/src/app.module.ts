@@ -1,11 +1,11 @@
 import { Module } from '@nestjs/common';
 import { APP_FILTER, APP_INTERCEPTOR } from '@nestjs/core';
-import { ConfigModule, ConfigService } from '@nestjs/config';
+import { ConfigModule } from '@nestjs/config';
 
 // === controllers ===
 import { AppController } from './app.controller';
 
-// === modules
+// === modules ===
 import { MovieModule } from './movie/movie.module';
 import { AuthModule } from './auth/auth.module';
 import { UsersModule } from './users/users.module';
@@ -14,7 +14,6 @@ import { UsersModule } from './users/users.module';
 import { HttpErrorFilter } from './shared/filters/http-error.filter';
 import { LoggingInterceptor } from './shared/interceptors/logging.interceptor';
 import { DatabaseModule } from './database/database.module';
-import config from './database/mikro-orm.config';
 
 @Module({
   imports: [
@@ -30,7 +29,6 @@ import config from './database/mikro-orm.config';
   providers: [
     { provide: APP_FILTER, useClass: HttpErrorFilter },
     { provide: APP_INTERCEPTOR, useClass: LoggingInterceptor },
-    { provide: ConfigService, useValue: new ConfigService(config) },
   ],
 })
 export class AppModule {}

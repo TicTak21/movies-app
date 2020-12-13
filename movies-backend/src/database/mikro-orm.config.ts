@@ -1,11 +1,14 @@
 import { __prod__ } from '../constants';
 import { Logger } from '@nestjs/common';
 import { Options } from '@mikro-orm/core';
+import dotenv from 'dotenv';
+dotenv.config();
 
 // === entities ===
 import { MovieEntity } from '../movie/movie.entity';
 import { BaseEntity } from '../shared/entities/base.entity';
 import { UserEntity } from '../users/user.entity';
+import { ConfigService } from '@nestjs/config';
 
 const logger = new Logger('MikroORM');
 
@@ -17,8 +20,7 @@ const config: Options = {
   },
   entities: [BaseEntity, MovieEntity, UserEntity],
   entitiesTs: ['src/**/*.entity.ts'],
-  clientUrl:
-    'postgres://rnlyggrw:J_yJs7vDe5LoDuONHOkSpaRRC0kyqLiN@rogue.db.elephantsql.com:5432/rnlyggrw',
+  clientUrl: new ConfigService().get<string>('DATABASE_URL'),
   type: 'postgresql',
   port: 5432,
   debug: !__prod__,
