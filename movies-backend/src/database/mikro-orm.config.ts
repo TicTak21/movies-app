@@ -1,11 +1,11 @@
-import { __prod__ } from './constants';
+import { __prod__ } from '../constants';
 import { Logger } from '@nestjs/common';
 import { Options } from '@mikro-orm/core';
 
 // === entities ===
-import { MovieEntity } from './movie/movie.entity';
-import { BaseEntity } from './shared/entities/base.entity';
-import { UserEntity } from './users/user.entity';
+import { MovieEntity } from '../movie/movie.entity';
+import { BaseEntity } from '../shared/entities/base.entity';
+import { UserEntity } from '../users/user.entity';
 
 const logger = new Logger('MikroORM');
 
