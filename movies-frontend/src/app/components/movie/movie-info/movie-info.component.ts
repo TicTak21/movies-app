@@ -17,11 +17,11 @@ const styles = {
 };
 
 @Component({
-  selector: 'app-movie-card-info',
-  templateUrl: './movie-card-info.component.html',
-  styleUrls: ['./movie-card-info.component.scss'],
+  selector: 'app-movie-info',
+  templateUrl: './movie-info.component.html',
+  styleUrls: ['./movie-info.component.html'],
 })
-export class MovieCardInfoComponent implements OnInit {
+export class MovieInfoComponent implements OnInit {
   @Input() public rating = 0;
   @Input() public views = 0;
   @Input() public country = '';

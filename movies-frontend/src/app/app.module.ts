@@ -61,7 +61,7 @@ import { environment } from '../environments/environment';
 import { CarouselComponent } from './components/carousel/carousel.component';
 import { SelectFilterComponent } from './components/select-filter/select-filter.component';
 import { MovieDetailsComponent } from './pages/movie/movie-details/movie-details.component';
-import { MovieCardInfoComponent } from './components/movie/movie-card-info/movie-card-info.component';
+import { MovieInfoComponent } from './components/movie/movie-info/movie-info.component';
 
 @NgModule({
   declarations: [
@@ -79,7 +79,7 @@ import { MovieCardInfoComponent } from './components/movie/movie-card-info/movie
     CarouselComponent,
     SelectFilterComponent,
     MovieDetailsComponent,
-    MovieCardInfoComponent,
+    MovieInfoComponent,
   ],
   imports: [
     BrowserModule,
