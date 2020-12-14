@@ -14,6 +14,7 @@ import { UsersModule } from './users/users.module';
 import { HttpErrorFilter } from './shared/filters/http-error.filter';
 import { LoggingInterceptor } from './shared/interceptors/logging.interceptor';
 import { DatabaseModule } from './database/database.module';
+import { ActorModule } from './actor/actor.module';
 
 @Module({
   imports: [
@@ -24,6 +25,7 @@ import { DatabaseModule } from './database/database.module';
     AuthModule,
     UsersModule,
     DatabaseModule,
+    ActorModule,
   ],
   controllers: [AppController],
   providers: [

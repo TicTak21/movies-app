@@ -8,6 +8,7 @@ import { __prod__ } from './constants';
 import { UserEntity } from './users/user.entity';
 import { MovieEntity } from './movie/movie.entity';
 import { BaseEntity } from './shared/entities/base.entity';
+import { ActorEntity } from './actor/actor.entity';
 
 const logger = new Logger('MikroORM');
 dotenv.config();
@@ -18,7 +19,7 @@ const config: Options = {
     pattern: /^[\w-]+\d+\.[tj]s$/,
     disableForeignKeys: false,
   },
-  entities: [BaseEntity, MovieEntity, UserEntity],
+  entities: [BaseEntity, MovieEntity, UserEntity, ActorEntity],
   entitiesTs: ['src/**/*.entity.ts'],
   clientUrl: new ConfigService().get<string>('DATABASE_URL'),
   type: 'postgresql',
