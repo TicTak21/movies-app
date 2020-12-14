@@ -1,16 +1,16 @@
-import { __prod__ } from '../constants';
 import { Logger } from '@nestjs/common';
 import { Options } from '@mikro-orm/core';
+import { ConfigService } from '@nestjs/config';
 import dotenv from 'dotenv';
-dotenv.config();
+import { __prod__ } from './constants';
 
 // === entities ===
-import { MovieEntity } from '../movie/movie.entity';
-import { BaseEntity } from '../shared/entities/base.entity';
-import { UserEntity } from '../users/user.entity';
-import { ConfigService } from '@nestjs/config';
+import { UserEntity } from './users/user.entity';
+import { MovieEntity } from './movie/movie.entity';
+import { BaseEntity } from './shared/entities/base.entity';
 
 const logger = new Logger('MikroORM');
+dotenv.config();
 
 const config: Options = {
   migrations: {
