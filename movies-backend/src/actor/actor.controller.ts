@@ -10,6 +10,7 @@ import {
 } from '@nestjs/common';
 import {
   ApiBearerAuth,
+  ApiCreatedResponse,
   ApiOkResponse,
   ApiQuery,
   ApiTags,
@@ -46,7 +47,7 @@ export class ActorController {
   }
 
   @ApiBearerAuth()
-  @ApiOkResponse({ description: 'Add actor' })
+  @ApiCreatedResponse({ description: 'Add actor', status: 201 })
   @UseGuards(JwtAuthGuard)
   @Post()
   add(@Body() { actor }: { actor: IActor }): Promise<IActor | HttpException> {

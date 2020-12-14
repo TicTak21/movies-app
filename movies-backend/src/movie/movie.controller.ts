@@ -65,7 +65,7 @@ export class MovieController {
   }
 
   @ApiBearerAuth()
-  @ApiOkResponse({ description: 'Add movie' })
+  @ApiOkResponse({ description: 'Add movie', status: 201 })
   @UseGuards(JwtAuthGuard)
   @Post()
   add(@Body() { movie }: { movie: IMovie }): Promise<IMovie | HttpException> {

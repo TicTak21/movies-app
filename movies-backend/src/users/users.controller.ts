@@ -9,7 +9,13 @@ import {
 } from '@nestjs/common';
 
 // === swagger ===
-import { ApiBearerAuth, ApiOkResponse, ApiTags } from '@nestjs/swagger';
+import {
+  ApiBearerAuth,
+  ApiCreatedResponse,
+  ApiOkResponse,
+  ApiResponse,
+  ApiTags,
+} from '@nestjs/swagger';
 import { JwtAuthGuard } from 'src/shared/guards/auth.guard';
 
 // === interfaces ===
@@ -36,7 +42,7 @@ export class UsersController {
   }
 
   @ApiBearerAuth()
-  @ApiOkResponse({ description: 'Add user' })
+  @ApiResponse({ description: 'Add user', status: 201 })
   @UseGuards(JwtAuthGuard)
   @Post()
   add(@Body() { user }: { user: IUser }): Promise<IUser | HttpException> {
