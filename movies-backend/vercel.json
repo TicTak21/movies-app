@@ -1,5 +1,8 @@
 {
   "version": 2,
   "builds": [{ "src": "dist/main.js", "use": "@now/node" }],
-  "routes": [{ "src": "/(.*)", "dest": "dist/main.js" }]
+  "routes": [{ "src": "/(.*)", "dest": "dist/main.js" }],
+  "env": {
+    "ENV_PATH": "vercel.env"
+  }
 }
