@@ -18,9 +18,9 @@ export class MovieService {
     private readonly em: EntityManager,
   ) {}
 
-  async getAll(): Promise<IMovie[] | []> {
+  async getAll(limit?: number): Promise<IMovie[] | []> {
     try {
-      return await this.movieRepository.findAll();
+      return await this.movieRepository.findAll({ limit });
     } catch ({ message }) {
       Logger.error(message);
 

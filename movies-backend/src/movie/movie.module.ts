@@ -1,4 +1,4 @@
-import { Module } from '@nestjs/common';
+import { Logger, Module } from '@nestjs/common';
 
 // === mikro-orm ===
 import { MikroOrmModule } from '@mikro-orm/nestjs';
@@ -14,7 +14,7 @@ import { MovieService } from 'src/movie/movie.service';
 
 @Module({
   imports: [MikroOrmModule.forFeature([MovieEntity])],
-  providers: [MovieService],
+  providers: [MovieService, Logger],
   controllers: [MovieController],
 })
 export class MovieModule {}

@@ -4,9 +4,11 @@ import {
   Delete,
   Get,
   HttpException,
+  Logger,
   Param,
   Post,
   Put,
+  Query,
   UseGuards,
 } from '@nestjs/common';
 
@@ -15,6 +17,7 @@ import {
   ApiBearerAuth,
   ApiBody,
   ApiOkResponse,
+  ApiQuery,
   ApiTags,
 } from '@nestjs/swagger';
 import { JwtAuthGuard } from 'src/shared/guards/auth.guard';
@@ -33,9 +36,25 @@ import { MovieService } from './movie.service';
 export class MovieController {
   constructor(private readonly movieService: MovieService) {}
 
+  @ApiQuery({ name: 'limit', required: false })
   @ApiOkResponse({ description: 'Get all movies' })
   @Get()
-  getAll(): Promise<IMovie[] | []> {
+  getAll(
+    @Query() { limit }: { limit: string },
+  ): Promise<IMovie[] | []> | HttpException {
+    if (limit) {
+      const parsedLimit = parseInt(limit);
+
+      if (Number.isNaN(parsedLimit)) {
+        const errMsg = 'invalid limit format in query';
+        Logger.error(errMsg);
+
+        return new HttpException({ Limit: errMsg }, 400);
+      }
+
+      return this.movieService.getAll(parsedLimit);
+    }
+
     return this.movieService.getAll();
   }
 
