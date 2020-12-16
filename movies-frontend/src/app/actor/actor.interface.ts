@@ -1,5 +1,5 @@
 import { IBase } from '../shared/interfaces/base.interface';
-import { IMovie } from '../shared/interfaces/movie.interface';
+import { IMovie } from '../movie/movie.interface';
 
 export interface IActor extends IBase {
   name: string;
