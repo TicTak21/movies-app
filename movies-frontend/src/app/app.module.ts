@@ -1,13 +1,18 @@
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import {
   BrowserModule,
   HAMMER_GESTURE_CONFIG,
-  HammerModule,
 } from '@angular/platform-browser';
+
+// === Modules ===
 import { NgModule } from '@angular/core';
 import { HttpClientModule } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
-
 import { AppRoutingModule } from './app-routing.module';
+import { MovieModule } from './movie/movie.module';
+import { ShareModule } from 'ngx-sharebuttons';
+
+// === Ly ===
 import {
   LyHammerGestureConfig,
   LyThemeModule,
@@ -16,17 +21,10 @@ import {
   StyleRenderer,
   LyTheme2,
 } from '@alyle/ui';
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MinimaLight, MinimaDark } from '@alyle/ui/themes/minima';
-
-// === ngx-sharebuttons ===
-import { ShareModule } from 'ngx-sharebuttons';
-
-// === Ly ===
 import { LySnackBarModule } from '@alyle/ui/snack-bar';
 import { LyBadgeModule } from '@alyle/ui/badge';
 import { LyListModule } from '@alyle/ui/list';
-import { LyAvatarModule } from '@alyle/ui/avatar';
 import { LyCommonModule } from '@alyle/ui';
 import { LyDrawerModule } from '@alyle/ui/drawer';
 import { LyButtonModule } from '@alyle/ui/button';
@@ -40,6 +38,7 @@ import { LyFieldModule } from '@alyle/ui/field';
 import { LyDialogModule } from '@alyle/ui/dialog';
 import { LyOverlayModule } from '@alyle/ui';
 import { LyCarouselModule } from '@alyle/ui/carousel';
+import { LyAvatarModule } from '@alyle/ui/avatar';
 
 // === components ===
 import { AppComponent } from './app.component';
@@ -51,8 +50,6 @@ import { ShareDialogComponent } from './components/share-dialog/share-dialog.com
 import { ServiceWorkerModule } from '@angular/service-worker';
 import { environment } from '../environments/environment';
 import { CarouselComponent } from './components/carousel/carousel.component';
-
-import { MovieModule } from './movie/movie.module';
 
 @NgModule({
   declarations: [

@@ -31,7 +31,7 @@ import { SortByPipe } from '../shared/pipes/sort-by/sort-by.pipe';
 import { MovieComponent } from './pages/movie/movie.component';
 import { MovieDetailsComponent } from './pages/movie/movie-details/movie-details.component';
 import { SelectFilterComponent } from '../components/select-filter/select-filter.component';
-import { SpinnerComponent } from '../components/spinner/spinner.component';
+import { SharedModule } from '../shared/shared.module';
 
 @NgModule({
   declarations: [
@@ -42,7 +42,6 @@ import { SpinnerComponent } from '../components/spinner/spinner.component';
     MovieComponent,
     MovieDetailsComponent,
     SelectFilterComponent,
-    SpinnerComponent,
     SortByPipe,
   ],
   providers: [MovieService],
@@ -66,9 +65,7 @@ import { SpinnerComponent } from '../components/spinner/spinner.component';
     LyFieldModule,
     LySnackBarModule,
     LyGridModule,
-    LyDividerModule,
-    LyDialogModule,
-    ShareModule,
+    SharedModule,
     LyOverlayModule,
     LyCarouselModule,
     LySelectModule,
