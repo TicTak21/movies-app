@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Observable } from 'rxjs';
-import { IMovie } from 'src/app/shared/interfaces/movie.interface';
-import { MovieService } from 'src/app/shared/services/movie/movie.service';
+import { IMovie } from 'src/app/movie/movie.interface';
+import { MovieService } from 'src/app/movie/movie.service';
 
 @Component({
   selector: 'app-movie',

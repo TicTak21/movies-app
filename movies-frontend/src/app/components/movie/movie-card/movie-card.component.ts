@@ -7,9 +7,9 @@ import {
 } from '@angular/core';
 import { LySnackBar } from '@alyle/ui/snack-bar';
 import { ThemeVariables, shadowBuilder, LyTheme2 } from '@alyle/ui';
-import { IMovie } from 'src/app/shared/interfaces/movie.interface';
 import { LyDialog } from '@alyle/ui/dialog';
 import { ShareDialogComponent } from 'src/app/components/share-dialog/share-dialog.component';
+import { IMovie } from 'src/app/movie/movie.interface';
 
 const styles = (theme: ThemeVariables) => ({
   wrapper: {

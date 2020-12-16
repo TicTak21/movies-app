@@ -1,7 +1,6 @@
 import { LyTheme2 } from '@alyle/ui';
 import { Component, Input, OnInit } from '@angular/core';
 import { Observable } from 'rxjs';
-import { ESortOrder } from 'src/app/shared/enums/sort.enum';
 
 const style = {
   listHeader: {

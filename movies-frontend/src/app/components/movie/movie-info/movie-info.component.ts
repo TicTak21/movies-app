@@ -1,6 +1,5 @@
 import { LyTheme2 } from '@alyle/ui';
 import { Component, Input, OnInit } from '@angular/core';
-import { IMovie } from 'src/app/shared/interfaces/movie.interface';
 
 const styles = {
   cardInfo: {
