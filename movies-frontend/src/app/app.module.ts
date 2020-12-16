@@ -48,7 +48,6 @@ import { PageNotFoundComponent } from './pages/page-not-found/page-not-found.com
 import { HomeComponent } from './pages/home/home.component';
 import { AboutComponent } from './pages/about/about.component';
 import { ShareDialogComponent } from './components/share-dialog/share-dialog.component';
-import { SpinnerComponent } from './components/spinner/spinner.component';
 import { ServiceWorkerModule } from '@angular/service-worker';
 import { environment } from '../environments/environment';
 import { CarouselComponent } from './components/carousel/carousel.component';
@@ -63,7 +62,6 @@ import { MovieModule } from './movie/movie.module';
     HomeComponent,
     AboutComponent,
     ShareDialogComponent,
-    SpinnerComponent,
     CarouselComponent,
   ],
   imports: [

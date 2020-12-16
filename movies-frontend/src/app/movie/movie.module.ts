@@ -5,7 +5,7 @@ import { MovieInfoComponent } from './components/movie-info/movie-info.component
 import { MovieVideoComponent } from './components/movie-video/movie-video.component';
 import { MovieCardComponent } from './components/movie-card/movie-card.component';
 import { MovieListComponent } from './components/movie-list/movie-list.component';
-import { LyThemeModule, LyCommonModule, LyOverlayModule } from '@alyle/ui';
+import { LyThemeModule, LyOverlayModule } from '@alyle/ui';
 import { LyBadgeModule } from '@alyle/ui/badge';
 import { LyButtonModule } from '@alyle/ui/button';
 import { LyCarouselModule } from '@alyle/ui/carousel';
@@ -31,6 +31,7 @@ import { SortByPipe } from '../shared/pipes/sort-by/sort-by.pipe';
 import { MovieComponent } from './pages/movie/movie.component';
 import { MovieDetailsComponent } from './pages/movie/movie-details/movie-details.component';
 import { SelectFilterComponent } from '../components/select-filter/select-filter.component';
+import { SpinnerComponent } from '../components/spinner/spinner.component';
 
 @NgModule({
   declarations: [
@@ -41,6 +42,7 @@ import { SelectFilterComponent } from '../components/select-filter/select-filter
     MovieComponent,
     MovieDetailsComponent,
     SelectFilterComponent,
+    SpinnerComponent,
     SortByPipe,
   ],
   providers: [MovieService],
