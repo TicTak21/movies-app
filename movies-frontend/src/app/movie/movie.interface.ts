@@ -1,4 +1,4 @@
-import { IBase } from './base.interface';
+import { IBase } from '../shared/interfaces/base.interface';
 
 export interface IMovie extends IBase {
   title?: string;
