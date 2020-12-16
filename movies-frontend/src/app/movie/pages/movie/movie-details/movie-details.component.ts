@@ -2,7 +2,7 @@ import { LyTheme2 } from '@alyle/ui';
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { Observable } from 'rxjs';
-import { MovieService } from 'src/app/movie/movie.service';
+import { MovieService } from 'src/app/movie/services/movie.service';
 
 const styles = {
   root: {

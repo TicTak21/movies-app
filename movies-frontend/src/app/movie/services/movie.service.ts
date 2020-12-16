@@ -2,9 +2,9 @@ import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { catchError } from 'rxjs/operators';
-import { IMovie } from './movie.interface';
+import { IMovie } from '../movie.interface';
 import movieTrailer from 'movie-trailer';
-import { BaseService } from '../shared/services/base/base.service';
+import { BaseService } from '../../shared/services/base/base.service';
 
 @Injectable({
   providedIn: 'root',

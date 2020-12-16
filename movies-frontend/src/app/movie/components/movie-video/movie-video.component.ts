@@ -1,7 +1,7 @@
 import { LyTheme2 } from '@alyle/ui';
 import { Component, Input, OnInit } from '@angular/core';
 import { DomSanitizer, SafeResourceUrl } from '@angular/platform-browser';
-import { MovieService } from 'src/app/movie/movie.service';
+import { MovieService } from '../../services/movie.service';
 
 const styles = {
   wrapper: {

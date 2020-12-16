@@ -19,9 +19,6 @@ import {
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MinimaLight, MinimaDark } from '@alyle/ui/themes/minima';
 
-// === shared ===
-import { SortByPipe } from './shared/pipes/sort-by/sort-by.pipe';
-
 // === ngx-sharebuttons ===
 import { ShareModule } from 'ngx-sharebuttons';
 
@@ -43,45 +40,31 @@ import { LyFieldModule } from '@alyle/ui/field';
 import { LyDialogModule } from '@alyle/ui/dialog';
 import { LyOverlayModule } from '@alyle/ui';
 import { LyCarouselModule } from '@alyle/ui/carousel';
-import { LySelectModule } from '@alyle/ui/select';
 
 // === components ===
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './components/header/header.component';
-import { MovieCardComponent } from './components/movie/movie-card/movie-card.component';
 import { PageNotFoundComponent } from './pages/page-not-found/page-not-found.component';
 import { HomeComponent } from './pages/home/home.component';
 import { AboutComponent } from './pages/about/about.component';
-import { MovieListComponent } from './components/movie/movie-list/movie-list.component';
-import { MovieComponent } from './pages/movie/movie.component';
 import { ShareDialogComponent } from './components/share-dialog/share-dialog.component';
 import { SpinnerComponent } from './components/spinner/spinner.component';
 import { ServiceWorkerModule } from '@angular/service-worker';
 import { environment } from '../environments/environment';
 import { CarouselComponent } from './components/carousel/carousel.component';
-import { SelectFilterComponent } from './components/select-filter/select-filter.component';
-import { MovieDetailsComponent } from './pages/movie/movie-details/movie-details.component';
-import { MovieInfoComponent } from './components/movie/movie-info/movie-info.component';
-import { MovieVideoComponent } from './components/movie/movie-video/movie-video.component';
+
+import { MovieModule } from './movie/movie.module';
 
 @NgModule({
   declarations: [
     AppComponent,
     HeaderComponent,
-    MovieCardComponent,
     PageNotFoundComponent,
     HomeComponent,
     AboutComponent,
-    MovieListComponent,
-    MovieComponent,
-    SortByPipe,
     ShareDialogComponent,
     SpinnerComponent,
     CarouselComponent,
-    SelectFilterComponent,
-    MovieDetailsComponent,
-    MovieInfoComponent,
-    MovieVideoComponent,
   ],
   imports: [
     BrowserModule,
@@ -90,7 +73,6 @@ import { MovieVideoComponent } from './components/movie/movie-video/movie-video.
     BrowserAnimationsModule,
     FormsModule,
     LyThemeModule,
-    HammerModule,
     LyIconModule,
     LyTypographyModule,
     LyButtonModule,
@@ -109,7 +91,7 @@ import { MovieVideoComponent } from './components/movie/movie-video/movie-video.
     ShareModule,
     LyOverlayModule,
     LyCarouselModule,
-    LySelectModule,
+    MovieModule,
     ServiceWorkerModule.register('ngsw-worker.js', {
       enabled: environment.production,
     }),
