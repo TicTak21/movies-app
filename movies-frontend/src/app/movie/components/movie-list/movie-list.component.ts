@@ -1,6 +1,8 @@
 import { LyTheme2 } from '@alyle/ui';
 import { Component, Input, OnInit } from '@angular/core';
 import { Observable } from 'rxjs';
+import { IMovie } from '../../movie.interface';
+import { MovieService } from '../../services/movie.service';
 
 const style = {
   listHeader: {
@@ -22,14 +24,16 @@ const style = {
   styleUrls: ['./movie-list.component.scss'],
 })
 export class MovieListComponent implements OnInit {
-  @Input()
-  public movies$: Observable<[]> = new Observable<[]>();
+  public movies$: Observable<IMovie[]> = new Observable<IMovie[]>();
 
   public activeFilter = 'views';
 
   public readonly classes = this.theme.addStyleSheet(style);
 
-  constructor(private readonly theme: LyTheme2) {}
+  constructor(
+    private readonly theme: LyTheme2,
+    private readonly movieService: MovieService,
+  ) {}
 
   public getSortConfig() {
     return {
@@ -38,5 +42,11 @@ export class MovieListComponent implements OnInit {
     };
   }
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
+    this.fetchMovies();
+  }
+
+  private fetchMovies(): void {
+    this.movies$ = this.movieService.getAllMovies();
+  }
 }

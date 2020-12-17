@@ -9,8 +9,6 @@ import { LyThemeModule, LyOverlayModule } from '@alyle/ui';
 import { LyBadgeModule } from '@alyle/ui/badge';
 import { LyButtonModule } from '@alyle/ui/button';
 import { LyCarouselModule } from '@alyle/ui/carousel';
-import { LyDialogModule } from '@alyle/ui/dialog';
-import { LyDividerModule } from '@alyle/ui/divider';
 import { LyDrawerModule } from '@alyle/ui/drawer';
 import { LyFieldModule } from '@alyle/ui/field';
 import { LyGridModule } from '@alyle/ui/grid';
@@ -25,10 +23,8 @@ import { HttpClientModule } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
 import { BrowserModule, HammerModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { ShareModule } from 'ngx-sharebuttons';
 import { AppRoutingModule } from '../app-routing.module';
 import { SortByPipe } from '../shared/pipes/sort-by/sort-by.pipe';
-import { MovieComponent } from './pages/movie/movie.component';
 import { MovieDetailsComponent } from './pages/movie/movie-details/movie-details.component';
 import { SelectFilterComponent } from '../components/select-filter/select-filter.component';
 import { SharedModule } from '../shared/shared.module';
@@ -39,7 +35,6 @@ import { SharedModule } from '../shared/shared.module';
     MovieVideoComponent,
     MovieCardComponent,
     MovieListComponent,
-    MovieComponent,
     MovieDetailsComponent,
     SelectFilterComponent,
     SortByPipe,
