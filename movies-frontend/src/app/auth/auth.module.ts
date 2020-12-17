@@ -11,8 +11,8 @@ import { LyFieldModule } from '@alyle/ui/field';
 
 // === components ===
 import { AuthComponent } from './auth.component';
-import { SignupComponent } from './pages/signup/signup.component';
-import { SigninComponent } from './pages/signin/signin.component';
+import { SignupComponent } from './components/signup/signup.component';
+import { SigninComponent } from './components/signin/signin.component';
 import { LyIconModule } from '@alyle/ui/icon';
 
 @NgModule({
