@@ -26,7 +26,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { AppRoutingModule } from '../app-routing.module';
 import { SortByPipe } from '../shared/pipes/sort-by/sort-by.pipe';
 import { MovieDetailsComponent } from './components/movie-details/movie-details.component';
-import { SelectFilterComponent } from '../components/select-filter/select-filter.component';
+import { SelectFilterComponent } from '../shared/components/select-filter/select-filter.component';
 import { SharedModule } from '../shared/shared.module';
 
 @NgModule({

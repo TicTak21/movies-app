@@ -42,13 +42,13 @@ import { LyAvatarModule } from '@alyle/ui/avatar';
 
 // === components ===
 import { AppComponent } from './app.component';
-import { HeaderComponent } from './components/header/header.component';
+import { HeaderComponent } from './shared/components/header/header.component';
 import { HomeComponent } from './pages/home/home.component';
 import { AboutComponent } from './pages/about/about.component';
-import { ShareDialogComponent } from './components/share-dialog/share-dialog.component';
+import { ShareDialogComponent } from './shared/components/share-dialog/share-dialog.component';
 import { ServiceWorkerModule } from '@angular/service-worker';
 import { environment } from '../environments/environment';
-import { CarouselComponent } from './components/carousel/carousel.component';
+import { CarouselComponent } from './shared/components/carousel/carousel.component';
 import { PageNotFoundModule } from './page-not-found/page-not-found.module';
 
 @NgModule({
