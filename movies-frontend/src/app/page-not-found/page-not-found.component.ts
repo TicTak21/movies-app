@@ -4,13 +4,7 @@ import { Router } from '@angular/router';
 
 const styles = {
   centered: {
-    height: '100%',
-    width: '100%',
-    position: 'fixed',
-    display: 'flex',
-    justifyContent: 'center',
-    alignItems: 'center',
-    flexDirection: 'column',
+    textAlign: 'center',
   },
 };
 

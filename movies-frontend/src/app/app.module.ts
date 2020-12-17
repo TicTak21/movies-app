@@ -43,19 +43,18 @@ import { LyAvatarModule } from '@alyle/ui/avatar';
 // === components ===
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './components/header/header.component';
-import { PageNotFoundComponent } from './pages/page-not-found/page-not-found.component';
 import { HomeComponent } from './pages/home/home.component';
 import { AboutComponent } from './pages/about/about.component';
 import { ShareDialogComponent } from './components/share-dialog/share-dialog.component';
 import { ServiceWorkerModule } from '@angular/service-worker';
 import { environment } from '../environments/environment';
 import { CarouselComponent } from './components/carousel/carousel.component';
+import { PageNotFoundModule } from './page-not-found/page-not-found.module';
 
 @NgModule({
   declarations: [
     AppComponent,
     HeaderComponent,
-    PageNotFoundComponent,
     HomeComponent,
     AboutComponent,
     ShareDialogComponent,
@@ -87,6 +86,7 @@ import { CarouselComponent } from './components/carousel/carousel.component';
     LyOverlayModule,
     LyCarouselModule,
     MovieModule,
+    PageNotFoundModule,
     ServiceWorkerModule.register('ngsw-worker.js', {
       enabled: environment.production,
     }),
