@@ -1,7 +1,6 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { HomeComponent } from './pages/home/home.component';
-import { AboutComponent } from './pages/about/about.component';
 import { MovieDetailsComponent } from './movie/components/movie-details/movie-details.component';
 import { MovieListComponent } from './movie/components/movie-list/movie-list.component';
 
@@ -15,8 +14,7 @@ const routes: Routes = [
   },
   {
     path: 'about',
-    component: AboutComponent,
-    data: { animation: 'AboutPage' },
+    loadChildren: () => import('./about/about.module').then(m => m.AboutModule),
   },
   {
     path: 'auth',

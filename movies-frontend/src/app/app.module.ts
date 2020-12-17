@@ -44,19 +44,18 @@ import { LyAvatarModule } from '@alyle/ui/avatar';
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './shared/components/header/header.component';
 import { HomeComponent } from './pages/home/home.component';
-import { AboutComponent } from './pages/about/about.component';
 import { ShareDialogComponent } from './shared/components/share-dialog/share-dialog.component';
 import { ServiceWorkerModule } from '@angular/service-worker';
 import { environment } from '../environments/environment';
 import { CarouselComponent } from './shared/components/carousel/carousel.component';
 import { PageNotFoundModule } from './page-not-found/page-not-found.module';
+import { AboutModule } from './about/about.module';
 
 @NgModule({
   declarations: [
     AppComponent,
     HeaderComponent,
     HomeComponent,
-    AboutComponent,
     ShareDialogComponent,
     CarouselComponent,
   ],
@@ -78,6 +77,7 @@ import { PageNotFoundModule } from './page-not-found/page-not-found.module';
     LyDrawerModule,
     LyRadioModule,
     LyFieldModule,
+    AboutModule,
     LySnackBarModule,
     LyGridModule,
     LyDividerModule,
