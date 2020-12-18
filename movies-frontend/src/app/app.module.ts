@@ -24,14 +24,10 @@ import {
 import { MinimaLight, MinimaDark } from '@alyle/ui/themes/minima';
 import { LySnackBarModule } from '@alyle/ui/snack-bar';
 import { LyBadgeModule } from '@alyle/ui/badge';
-import { LyListModule } from '@alyle/ui/list';
 import { LyCommonModule } from '@alyle/ui';
 import { LyDrawerModule } from '@alyle/ui/drawer';
-import { LyButtonModule } from '@alyle/ui/button';
 import { LyRadioModule } from '@alyle/ui/radio';
-import { LyIconModule } from '@alyle/ui/icon';
 import { LyToolbarModule } from '@alyle/ui/toolbar';
-import { LyTypographyModule } from '@alyle/ui/typography';
 import { LyGridModule } from '@alyle/ui/grid';
 import { LyDividerModule } from '@alyle/ui/divider';
 import { LyFieldModule } from '@alyle/ui/field';
@@ -49,6 +45,7 @@ import { environment } from '../environments/environment';
 import { PageNotFoundModule } from './page-not-found/page-not-found.module';
 import { AboutModule } from './about/about.module';
 import { HomeModule } from './home/home.module';
+import { SharedModule } from './shared/shared.module';
 
 @NgModule({
   declarations: [AppComponent, HeaderComponent, ShareDialogComponent],
@@ -59,11 +56,7 @@ import { HomeModule } from './home/home.module';
     BrowserAnimationsModule,
     FormsModule,
     LyThemeModule,
-    LyIconModule,
-    LyTypographyModule,
-    LyButtonModule,
     LyBadgeModule,
-    LyListModule,
     LyAvatarModule,
     LyToolbarModule,
     LyCommonModule,
@@ -81,6 +74,7 @@ import { HomeModule } from './home/home.module';
     MovieModule,
     PageNotFoundModule,
     HomeModule,
+    SharedModule,
     ServiceWorkerModule.register('ngsw-worker.js', {
       enabled: environment.production,
     }),
