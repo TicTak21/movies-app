@@ -1,6 +1,6 @@
 <div *ngIf="movies$ | async as movies; else loading">
-  <div [className]="classes.listHeader">
-    <div [className]="classes.listTitle">
+  <div class="list-header">
+    <div class="list-title">
       <h1 lyTyp="display1" gutterBottom>Movies</h1>
 
       <button ly-button appearance="miniFab">
@@ -22,4 +22,6 @@
   </ly-list>
 </div>
 
-<app-spinner #loading></app-spinner>
+<ng-template #loading>
+  <app-spinner></app-spinner>
+</ng-template>

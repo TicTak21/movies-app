@@ -10,21 +10,19 @@ import { BaseService } from '../../shared/services/base/base.service';
   providedIn: 'root',
 })
 export class MovieService extends BaseService {
-  private readonly url: string = this.baseUrl + '/movies';
-
   constructor(private readonly httpClient: HttpClient) {
-    super();
+    super('/movies');
   }
 
   public getAllMovies<T = IMovie>(): Observable<T[]> {
     return this.httpClient
-      .get<T[]>(this.url)
+      .get<T[]>(this.baseUrl)
       .pipe(catchError(this.handleError<T[]>('getMovies', [])));
   }
 
   public getMovieById<T = IMovie>(id: string): Observable<T> {
     return this.httpClient
-      .get<T>(this.url + `/${id}`)
+      .get<T>(this.baseUrl + `/${id}`)
       .pipe(catchError(this.handleError<T>('getMovieById')));
   }
 

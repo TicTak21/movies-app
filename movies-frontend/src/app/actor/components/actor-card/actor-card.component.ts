@@ -1,15 +1,15 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
+import { IActor } from '../../actor.interface';
 
 @Component({
   selector: 'app-actor-card',
   templateUrl: './actor-card.component.html',
-  styleUrls: ['./actor-card.component.scss']
+  styleUrls: ['./actor-card.component.scss'],
 })
 export class ActorCardComponent implements OnInit {
+  @Input() public actor: IActor = {} as IActor;
 
-  constructor() { }
+  constructor() {}
 
-  ngOnInit(): void {
-  }
-
+  ngOnInit(): void {}
 }

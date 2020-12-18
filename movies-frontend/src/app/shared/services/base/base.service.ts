@@ -7,7 +7,9 @@ import { Observable, of } from 'rxjs';
 export class BaseService {
   protected readonly baseUrl = 'https://movies-backend.vercel.app';
 
-  constructor() {}
+  constructor(private readonly url: string) {
+    this.baseUrl += this.url;
+  }
 
   protected handleError<T>(operation = 'operation', result?: T) {
     return (error: any): Observable<T> => {

@@ -47,3 +47,18 @@ a {
     justify-content: space-between;
   }
 }
+
+.list {
+  &-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1em;
+    flex-wrap: wrap;
+  }
+
+  &-title {
+    display: flex;
+    align-items: center;
+  }
+}
