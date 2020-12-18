@@ -4,6 +4,7 @@ import {
   Get,
   HttpException,
   Logger,
+  Param,
   Post,
   Query,
   UseGuards,
@@ -44,6 +45,12 @@ export class ActorController {
     }
 
     return this.actorService.getAll();
+  }
+
+  @ApiOkResponse({ description: 'Get actor by id' })
+  @Get(':id')
+  getById(@Param('id') id: string): Promise<IActor | HttpException> {
+    return this.actorService.getById(id);
   }
 
   @ApiBearerAuth()

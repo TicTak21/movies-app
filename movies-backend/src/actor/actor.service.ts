@@ -22,6 +22,16 @@ export class ActorService {
     }
   }
 
+  async getById(id: string): Promise<IActor | HttpException> {
+    try {
+      return await this.actorRepository.findOneOrFail(id);
+    } catch (err) {
+      Logger.error(err.message);
+
+      return new HttpException({ Actor: `${id} not found` }, 404);
+    }
+  }
+
   async add(actor: IActor): Promise<IActor | HttpException> {
     try {
       const actorEntity = this.em.create(ActorEntity, actor);
