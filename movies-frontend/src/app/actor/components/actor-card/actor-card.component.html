@@ -1,17 +1,31 @@
-<ly-card [lyMaxWidth]="300">
-  <ly-card-media bgImg="" title="actor.name"></ly-card-media>
-  <ly-card-content>
-    <h2 lyTyp="headline" gutterBottom>{{ actor.name }}</h2>
-    <p lyTyp="body1">
-      {{ actor.bio || 'No bio' }}
-    </p>
-  </ly-card-content>
-  <ly-card-actions disableActionSpacing>
-    <button ly-button appearance="icon" color="accent">
-      <ly-icon>favorite</ly-icon>
-    </button>
-    <button ly-button appearance="icon">
-      <ly-icon>share</ly-icon>
-    </button>
-  </ly-card-actions>
-</ly-card>
+<div>
+  <ly-card [className]="classes.wrapper">
+    <ly-card-media
+      bgImg="https://images.unsplash.com/photo-1579083390468-dbcc7a3fc192?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1650&q=80"
+      title="actor.name"
+    ></ly-card-media>
+    <ly-card-content>
+      <h2 lyTyp="headline" gutterBottom>
+        <a routerLink="/actors/{{ actor.id }}">{{ actor.name }}</a>
+      </h2>
+      <p lyTyp="body1">Age: {{ getActorAge() }}</p>
+      <p lyTyp="body1">
+        {{ actor.bio | titlecase }}
+      </p>
+      <p class="body1" *ngIf="actor.awards">Awards: {{ actor.awards[0] }}</p>
+    </ly-card-content>
+    <ly-card-actions disableActionSpacing [className]="classes.cardActions">
+      <button ly-button appearance="icon" color="warn" (click)="handleLike()">
+        <ly-icon *ngIf="!isLiked">favorite_outlined</ly-icon>
+        <ly-icon *ngIf="isLiked">favorite_filled</ly-icon>
+      </button>
+      <button ly-button appearance="icon" (click)="handleBookmark()">
+        <ly-icon *ngIf="!isBookmarked">bookmark_border</ly-icon>
+        <ly-icon *ngIf="isBookmarked">bookmark</ly-icon>
+      </button>
+      <button ly-button appearance="icon" (click)="openDialog()">
+        <ly-icon>share</ly-icon>
+      </button>
+    </ly-card-actions>
+  </ly-card>
+</div>

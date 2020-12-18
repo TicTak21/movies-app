@@ -1,7 +1,12 @@
+import { LyTheme2 } from '@alyle/ui';
 import { Component, OnInit } from '@angular/core';
 import { Observable } from 'rxjs';
 import { IActor } from '../../actor.interface';
 import { ActorService } from '../../services/actor.service';
+
+const style = {
+  listWrapper: {},
+};
 
 @Component({
   selector: 'app-actor-list',
@@ -11,7 +16,12 @@ import { ActorService } from '../../services/actor.service';
 export class ActorListComponent implements OnInit {
   public actors$: Observable<IActor[]> = new Observable<IActor[]>();
 
-  constructor(private readonly actorService: ActorService) {}
+  public readonly classes = this.theme.addStyleSheet(style);
+
+  constructor(
+    private readonly actorService: ActorService,
+    private readonly theme: LyTheme2,
+  ) {}
 
   ngOnInit(): void {
     this.fetchActors();
