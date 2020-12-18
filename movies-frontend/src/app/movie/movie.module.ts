@@ -13,13 +13,11 @@ import { LySelectModule } from '@alyle/ui/select';
 import { LySnackBarModule } from '@alyle/ui/snack-bar';
 import { HttpClientModule } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
-import { BrowserModule } from '@angular/platform-browser';
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { AppRoutingModule } from '../app-routing.module';
 import { SortByPipe } from '../shared/pipes/sort-by/sort-by.pipe';
 import { MovieDetailsComponent } from './components/movie-details/movie-details.component';
 import { SelectFilterComponent } from '../shared/components/select-filter/select-filter.component';
 import { SharedModule } from '../shared/shared.module';
+import { MovieRoutingModule } from './movie-routing.module';
 
 @NgModule({
   declarations: [
@@ -33,10 +31,7 @@ import { SharedModule } from '../shared/shared.module';
   ],
   providers: [MovieService],
   imports: [
-    BrowserModule,
     HttpClientModule,
-    AppRoutingModule,
-    BrowserAnimationsModule,
     FormsModule,
     LyThemeModule,
     LyBadgeModule,
@@ -46,6 +41,7 @@ import { SharedModule } from '../shared/shared.module';
     LyGridModule,
     SharedModule,
     LySelectModule,
+    MovieRoutingModule,
   ],
   exports: [MovieListComponent],
 })
