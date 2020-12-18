@@ -18,7 +18,7 @@ const styles = {
 })
 export class MovieDetailsComponent implements OnInit {
   public movie$: Observable<[]> = new Observable<[]>();
-  public movieVideoUrl: any = '';
+  public movieVideoUrl = '';
 
   public classes = this.theme.addStyleSheet(styles);
 

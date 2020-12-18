@@ -1,0 +1,7 @@
+<div *ngIf="actor$ | async as actor; else loading" [className]="classes.root">
+  <h1 lyTyp="display1" gutterBottom>{{ actor.name }}</h1>
+</div>
+
+<ng-template #loading>
+  <app-spinner></app-spinner>
+</ng-template>

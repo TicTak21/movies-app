@@ -8,9 +8,10 @@ import { LyCardModule } from '@alyle/ui/card';
 import { LyCommonModule } from '@alyle/ui';
 import { LyGridModule } from '@alyle/ui/grid';
 import { LyBadgeModule } from '@alyle/ui/badge';
+import { ActorDetailsComponent } from './components/actor-details/actor-details.component';
 
 @NgModule({
-  declarations: [ActorListComponent, ActorCardComponent],
+  declarations: [ActorListComponent, ActorCardComponent, ActorDetailsComponent],
   imports: [
     SharedModule,
     ActorRoutingModule,
