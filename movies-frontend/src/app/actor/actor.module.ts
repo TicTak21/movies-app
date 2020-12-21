@@ -9,6 +9,7 @@ import { LyCommonModule } from '@alyle/ui';
 import { LyGridModule } from '@alyle/ui/grid';
 import { LyBadgeModule } from '@alyle/ui/badge';
 import { ActorDetailsComponent } from './components/actor-details/actor-details.component';
+import { LyAvatarModule } from '@alyle/ui/avatar';
 
 @NgModule({
   declarations: [ActorListComponent, ActorCardComponent, ActorDetailsComponent],
@@ -19,6 +20,7 @@ import { ActorDetailsComponent } from './components/actor-details/actor-details.
     LyCommonModule,
     LyGridModule,
     LyBadgeModule,
+    LyAvatarModule,
   ],
   providers: [ActorService],
 })

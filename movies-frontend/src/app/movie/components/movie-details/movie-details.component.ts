@@ -3,6 +3,7 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { Observable } from 'rxjs';
 import { MovieService } from 'src/app/movie/services/movie.service';
+import { IMovie } from '../../movie.interface';
 
 const styles = {
   root: {
@@ -17,7 +18,7 @@ const styles = {
   styleUrls: ['./movie-details.component.scss'],
 })
 export class MovieDetailsComponent implements OnInit {
-  public movie$: Observable<[]> = new Observable<[]>();
+  public movie$: Observable<IMovie> = new Observable<IMovie>();
   public movieVideoUrl = '';
 
   public classes = this.theme.addStyleSheet(styles);

@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { Observable } from 'rxjs';
+import { IActor } from '../../actor.interface';
 import { ActorService } from '../../services/actor.service';
 
 @Component({
@@ -9,7 +10,7 @@ import { ActorService } from '../../services/actor.service';
   styleUrls: ['./actor-details.component.scss'],
 })
 export class ActorDetailsComponent implements OnInit {
-  public actor$: Observable<[]> = new Observable<[]>();
+  public actor$: Observable<IActor> = new Observable<IActor>();
 
   constructor(
     private readonly activatedRoute: ActivatedRoute,
