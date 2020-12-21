@@ -22,13 +22,13 @@ export class MovieEntity extends BaseEntity implements IMovie {
   @ApiProperty({
     example: 'Lincoln Lawyer',
     description: 'Movie title',
-    required: false,
-    nullable: true,
+    required: true,
+    nullable: false,
     type: 'string',
     maxLength: 200,
   })
-  @Property({ type: 'string', length: 200, nullable: true })
-  title?: string;
+  @Property({ type: 'string', length: 200, nullable: false })
+  title: string;
 
   @ApiProperty({
     example:
