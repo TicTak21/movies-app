@@ -12,6 +12,7 @@ import { IMovie } from './movie.interface';
 
 // === swagger ===
 import { ApiProperty } from '@nestjs/swagger';
+import { IActor } from 'src/actor/actor.interface';
 
 @Entity()
 export class MovieEntity extends BaseEntity implements IMovie {
@@ -105,4 +106,13 @@ export class MovieEntity extends BaseEntity implements IMovie {
   })
   @Property({ type: 'string' })
   releasedAt: string = getTimestamp();
+
+  @ApiProperty({
+    description: 'Movie actors array',
+    required: false,
+    nullable: true,
+    isArray: true,
+  })
+  @Property({ type: 'ArrayType', nullable: true })
+  actors?: IActor[];
 }

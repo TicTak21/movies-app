@@ -1,3 +1,4 @@
+import { IActor } from 'src/actor/actor.interface';
 import { IBase } from '../shared/interfaces/base.interface';
 
 export interface IMovie extends IBase {
@@ -9,4 +10,5 @@ export interface IMovie extends IBase {
   adult: boolean;
   country?: string;
   releasedAt: string;
+  actors?: IActor[];
 }
