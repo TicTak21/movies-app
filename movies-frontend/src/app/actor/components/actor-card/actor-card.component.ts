@@ -1,5 +1,6 @@
 import { LyTheme2, shadowBuilder, ThemeVariables } from '@alyle/ui';
 import { LyDialog } from '@alyle/ui/dialog';
+import { BuiltinFunctionCall } from '@angular/compiler/src/compiler_util/expression_converter';
 import { Component, Input, OnInit } from '@angular/core';
 import { ShareDialogComponent } from 'src/app/shared/components/share-dialog/share-dialog.component';
 import { IActor } from '../../actor.interface';
@@ -23,6 +24,7 @@ const style = (theme: ThemeVariables) => ({
 export class ActorCardComponent implements OnInit {
   @Input() public actor: IActor = {} as IActor;
 
+  public computedAge: number | null = null;
   public isLiked = false;
   public isBookmarked = false;
 
@@ -47,7 +49,7 @@ export class ActorCardComponent implements OnInit {
 
   public getActorAge() {
     if (!this.actor.born) {
-      return 'Unknown';
+      return null;
     }
 
     const now = new Date().getFullYear();
@@ -58,5 +60,7 @@ export class ActorCardComponent implements OnInit {
     return now - bornDate;
   }
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
+    this.computedAge = this.getActorAge();
+  }
 }
