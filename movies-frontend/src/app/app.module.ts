@@ -50,7 +50,7 @@ import { SharedModule } from './shared/shared.module';
 @NgModule({
   declarations: [AppComponent, HeaderComponent, ShareDialogComponent],
   imports: [
-    BrowserModule,
+    BrowserModule.withServerTransition({ appId: 'serverApp' }),
     HttpClientModule,
     AppRoutingModule,
     BrowserAnimationsModule,
