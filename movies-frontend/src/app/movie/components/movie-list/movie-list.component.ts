@@ -26,7 +26,7 @@ const style = {
 export class MovieListComponent implements OnInit {
   public movies$: Observable<IMovie[]> = new Observable<IMovie[]>();
 
-  public activeFilter = 'views';
+  public activeFilter = 'views_ASC';
 
   public readonly classes = this.theme.addStyleSheet(style);
 
@@ -36,9 +36,11 @@ export class MovieListComponent implements OnInit {
   ) {}
 
   public getSortConfig() {
+    const [prop, order] = this.activeFilter.split('_');
+
     return {
-      prop: this.activeFilter,
-      order: 'ASC',
+      prop,
+      order,
     };
   }
 

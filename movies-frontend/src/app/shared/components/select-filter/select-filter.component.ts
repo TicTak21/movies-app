@@ -8,7 +8,7 @@ import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 export class SelectFilterComponent implements OnInit {
   @Output()
   public activeFilterChange: EventEmitter<string> = new EventEmitter<string>();
-  @Input() public activeFilter = 'title';
+  @Input() public activeFilter: string | undefined;
 
   constructor() {}
 
