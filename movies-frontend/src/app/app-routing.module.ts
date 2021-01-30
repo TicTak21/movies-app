@@ -12,10 +12,6 @@ const routes: Routes = [
     loadChildren: () => import('./movie/movie.module').then(m => m.MovieModule),
   },
   {
-    path: 'actors',
-    loadChildren: () => import('./actor/actor.module').then(m => m.ActorModule),
-  },
-  {
     path: 'about',
     loadChildren: () => import('./about/about.module').then(m => m.AboutModule),
   },
@@ -27,15 +23,17 @@ const routes: Routes = [
     path: '**',
     loadChildren: () =>
       import('./page-not-found/page-not-found.module').then(
-        m => m.PageNotFoundModule,
+        m => m.PageNotFoundModule
       ),
   },
 ];
 
 @NgModule({
-  imports: [RouterModule.forRoot(routes, {
-    initialNavigation: 'enabled'
-})],
+  imports: [
+    RouterModule.forRoot(routes, {
+      initialNavigation: 'enabled',
+    }),
+  ],
   exports: [RouterModule],
 })
 export class AppRoutingModule {}

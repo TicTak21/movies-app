@@ -13,16 +13,14 @@ const styles = {
   templateUrl: './page-not-found.component.html',
   styleUrls: ['./page-not-found.component.scss'],
 })
-export class PageNotFoundComponent implements OnInit {
+export class PageNotFoundComponent {
   classes = this.theme.addStyleSheet(styles);
   targetUrl = '';
 
   constructor(
     private readonly theme: LyTheme2,
-    private readonly router: Router,
-  ) {}
-
-  ngOnInit(): void {
+    private readonly router: Router
+  ) {
     this.targetUrl = this.router.url;
   }
 }
